@@ -859,7 +859,7 @@
     .end packed-switch
 .end method
 
-.method public static getImsReasonInfo(Landroid/os/AsyncResult;)Lcom/android/ims/ImsReasonInfo;
+.method public static getImsReasonInfo(Landroid/os/AsyncResult;)Landroid/telephony/ims/ImsReasonInfo;
     .locals 3
     .param p0, "ar"    # Landroid/os/AsyncResult;
 
@@ -899,14 +899,14 @@
     .line 684
     .end local v1    # "sipErrorInfo":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
     :cond_0
-    invoke-static {v1, v0}, Lorg/codeaurora/ims/ImsCallUtils;->getImsReasonInfo(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;I)Lcom/android/ims/ImsReasonInfo;
+    invoke-static {v1, v0}, Lorg/codeaurora/ims/ImsCallUtils;->getImsReasonInfo(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;I)Landroid/telephony/ims/ImsReasonInfo;
 
     move-result-object v2
 
     return-object v2
 .end method
 
-.method public static getImsReasonInfo(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;I)Lcom/android/ims/ImsReasonInfo;
+.method public static getImsReasonInfo(Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;I)Landroid/telephony/ims/ImsReasonInfo;
     .locals 3
     .param p0, "error"    # Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
     .param p1, "errorCode"    # I
@@ -916,11 +916,11 @@
     if-nez p0, :cond_0
 
     .line 661
-    new-instance v0, Lcom/android/ims/ImsReasonInfo;
+    new-instance v0, Landroid/telephony/ims/ImsReasonInfo;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, v1}, Lcom/android/ims/ImsReasonInfo;-><init>(II)V
+    invoke-direct {v0, p1, v1}, Landroid/telephony/ims/ImsReasonInfo;-><init>(II)V
 
     return-object v0
 
@@ -971,7 +971,7 @@
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 665
-    new-instance v0, Lcom/android/ims/ImsReasonInfo;
+    new-instance v0, Landroid/telephony/ims/ImsReasonInfo;
 
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;->getSipErrorCode()I
 
@@ -983,7 +983,7 @@
     move-result-object v2
 
     .line 665
-    invoke-direct {v0, p1, v1, v2}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v0, p1, v1, v2}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     return-object v0
 .end method

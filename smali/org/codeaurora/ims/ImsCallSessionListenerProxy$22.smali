@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionRetryErrorReceived(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsReasonInfo;)V
+    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionRetryErrorReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

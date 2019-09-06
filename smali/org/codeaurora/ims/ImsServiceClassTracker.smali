@@ -1609,16 +1609,16 @@
     iput v7, v5, Lorg/codeaurora/ims/CallDetails;->call_domain:I
 
     .line 363
-    new-instance v5, Lcom/android/ims/ImsReasonInfo;
+    new-instance v5, Landroid/telephony/ims/ImsReasonInfo;
 
     const/16 v7, 0x83
 
     const/4 v8, 0x0
 
-    invoke-direct {v5, v7, v8}, Lcom/android/ims/ImsReasonInfo;-><init>(II)V
+    invoke-direct {v5, v7, v8}, Landroid/telephony/ims/ImsReasonInfo;-><init>(II)V
 
     .line 362
-    iput-object v5, v1, Lorg/codeaurora/ims/DriverCallIms;->callFailCause:Lcom/android/ims/ImsReasonInfo;
+    iput-object v5, v1, Lorg/codeaurora/ims/DriverCallIms;->callFailCause:Landroid/telephony/ims/ImsReasonInfo;
 
     .line 364
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2435,12 +2435,12 @@
     if-eqz v4, :cond_1
 
     .line 194
-    invoke-static {p1}, Lorg/codeaurora/ims/ImsCallUtils;->getImsReasonInfo(Landroid/os/AsyncResult;)Lcom/android/ims/ImsReasonInfo;
+    invoke-static {p1}, Lorg/codeaurora/ims/ImsCallUtils;->getImsReasonInfo(Landroid/os/AsyncResult;)Landroid/telephony/ims/ImsReasonInfo;
 
     move-result-object v3
 
     .line 195
-    .local v3, "reason":Lcom/android/ims/ImsReasonInfo;
+    .local v3, "reason":Landroid/telephony/ims/ImsReasonInfo;
     iget-object v4, p0, Lorg/codeaurora/ims/ImsServiceClassTracker;->mConfHostListener:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
     .line 196
@@ -2449,7 +2449,7 @@
     iget-object v5, v5, Lorg/codeaurora/ims/ImsServiceClassTracker$ConferenceResult;->activeCall:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     .line 195
-    invoke-virtual {v4, v5, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionMergeFailed(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsReasonInfo;)V
+    invoke-virtual {v4, v5, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionMergeFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
 
     .line 197
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsServiceClassTracker;->cleanupConferenceAttempt()V
@@ -2513,7 +2513,7 @@
 
     .line 208
     .end local v2    # "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;Lorg/codeaurora/ims/ImsCallSessionImpl;>;>;"
-    .end local v3    # "reason":Lcom/android/ims/ImsReasonInfo;
+    .end local v3    # "reason":Landroid/telephony/ims/ImsReasonInfo;
     :cond_1
     invoke-virtual {p0}, Lorg/codeaurora/ims/ImsServiceClassTracker;->processConferenceResult()V
 

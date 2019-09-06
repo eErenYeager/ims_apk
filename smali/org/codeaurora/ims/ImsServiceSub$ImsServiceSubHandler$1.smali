@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->notifyRegChange(ILcom/android/ims/ImsReasonInfo;I)V
+    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->notifyRegChange(ILandroid/telephony/ims/ImsReasonInfo;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,18 +22,18 @@
 
 .field final synthetic val$imsRadioTech:I
 
-.field final synthetic val$imsReasonInfo:Lcom/android/ims/ImsReasonInfo;
+.field final synthetic val$imsReasonInfo:Landroid/telephony/ims/ImsReasonInfo;
 
 .field final synthetic val$registrationState:I
 
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;IILcom/android/ims/ImsReasonInfo;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;IILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 0
     .param p1, "this$1"    # Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
     .param p2, "val$registrationState"    # I
     .param p3, "val$imsRadioTech"    # I
-    .param p4, "val$imsReasonInfo"    # Lcom/android/ims/ImsReasonInfo;
+    .param p4, "val$imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 1190
@@ -43,7 +43,7 @@
 
     iput p3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsRadioTech:I
 
-    iput-object p4, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsReasonInfo:Lcom/android/ims/ImsReasonInfo;
+    iput-object p4, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsReasonInfo:Landroid/telephony/ims/ImsReasonInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -146,9 +146,9 @@
     .restart local v1    # "listener$iterator":Ljava/util/Iterator;
     :pswitch_1
     :try_start_1
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsReasonInfo:Lcom/android/ims/ImsReasonInfo;
+    iget-object v3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsReasonInfo:Landroid/telephony/ims/ImsReasonInfo;
 
-    invoke-interface {v0, v3}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationDisconnected(Lcom/android/ims/ImsReasonInfo;)V
+    invoke-interface {v0, v3}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationDisconnected(Landroid/telephony/ims/ImsReasonInfo;)V
 
     goto :goto_0
 

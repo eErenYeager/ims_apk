@@ -530,13 +530,13 @@
     return-void
 .end method
 
-.method static synthetic -wrap32(Lorg/codeaurora/ims/ImsServiceSub;Lcom/android/ims/ImsReasonInfo;I)V
+.method static synthetic -wrap32(Lorg/codeaurora/ims/ImsServiceSub;Landroid/telephony/ims/ImsReasonInfo;I)V
     .locals 0
-    .param p1, "imsReasonInfo"    # Lcom/android/ims/ImsReasonInfo;
+    .param p1, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
     .param p2, "regState"    # I
 
     .prologue
-    invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsServiceSub;->sendBroadcastForDisconnected(Lcom/android/ims/ImsReasonInfo;I)V
+    invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsServiceSub;->sendBroadcastForDisconnected(Landroid/telephony/ims/ImsReasonInfo;I)V
 
     return-void
 .end method
@@ -5755,9 +5755,9 @@
     return-void
 .end method
 
-.method private sendBroadcastForDisconnected(Lcom/android/ims/ImsReasonInfo;I)V
+.method private sendBroadcastForDisconnected(Landroid/telephony/ims/ImsReasonInfo;I)V
     .locals 3
-    .param p1, "imsReasonInfo"    # Lcom/android/ims/ImsReasonInfo;
+    .param p1, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
     .param p2, "regState"    # I
 
     .prologue

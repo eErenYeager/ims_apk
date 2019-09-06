@@ -315,22 +315,22 @@
     .end local v7    # "selfIdentityUris":[Landroid/net/Uri;
     :cond_1
     :goto_4
-    new-instance v3, Lcom/android/ims/ImsReasonInfo;
+    new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 1268
     const/16 v9, 0x3e8
 
     .line 1267
-    invoke-direct {v3, v9, v0, v1}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v3, v9, v0, v1}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     .line 1270
-    .local v3, "imsReasonInfo":Lcom/android/ims/ImsReasonInfo;
+    .local v3, "imsReasonInfo":Landroid/telephony/ims/ImsReasonInfo;
     iget-object v9, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
-    invoke-static {v9, v3, v4}, Lorg/codeaurora/ims/ImsServiceSub;->-wrap32(Lorg/codeaurora/ims/ImsServiceSub;Lcom/android/ims/ImsReasonInfo;I)V
+    invoke-static {v9, v3, v4}, Lorg/codeaurora/ims/ImsServiceSub;->-wrap32(Lorg/codeaurora/ims/ImsServiceSub;Landroid/telephony/ims/ImsReasonInfo;I)V
 
     .line 1272
-    invoke-direct {p0, v4, v3, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->notifyRegChange(ILcom/android/ims/ImsReasonInfo;I)V
+    invoke-direct {p0, v4, v3, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->notifyRegChange(ILandroid/telephony/ims/ImsReasonInfo;I)V
 
     .line 1274
     if-eqz v7, :cond_2
@@ -352,7 +352,7 @@
     return-void
 
     .line 1248
-    .end local v3    # "imsReasonInfo":Lcom/android/ims/ImsReasonInfo;
+    .end local v3    # "imsReasonInfo":Landroid/telephony/ims/ImsReasonInfo;
     .restart local v1    # "errorMessage":Ljava/lang/String;
     .restart local v5    # "registration":Lorg/codeaurora/ims/ImsQmiIF$Registration;
     .restart local v7    # "selfIdentityUris":[Landroid/net/Uri;
@@ -428,17 +428,17 @@
     return-void
 .end method
 
-.method private notifyRegChange(ILcom/android/ims/ImsReasonInfo;I)V
+.method private notifyRegChange(ILandroid/telephony/ims/ImsReasonInfo;I)V
     .locals 2
     .param p1, "registrationState"    # I
-    .param p2, "imsReasonInfo"    # Lcom/android/ims/ImsReasonInfo;
+    .param p2, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
     .param p3, "imsRadioTech"    # I
 
     .prologue
     .line 1190
     new-instance v0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;
 
-    invoke-direct {v0, p0, p1, p3, p2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;IILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p3, p2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;IILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 1212
     .local v0, "r":Ljava/lang/Runnable;

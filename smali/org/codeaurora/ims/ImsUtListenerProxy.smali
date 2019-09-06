@@ -194,11 +194,11 @@
     return-void
 .end method
 
-.method public utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+.method public utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "error"    # Lcom/android/ims/ImsReasonInfo;
+    .param p3, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 80
@@ -209,7 +209,7 @@
     .line 81
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 91
     .local v0, "r":Ljava/lang/Runnable;
@@ -221,11 +221,11 @@
     return-void
 .end method
 
-.method public utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+.method public utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "error"    # Lcom/android/ims/ImsReasonInfo;
+    .param p3, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 41
@@ -236,7 +236,7 @@
     .line 42
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 52
     .local v0, "r":Ljava/lang/Runnable;

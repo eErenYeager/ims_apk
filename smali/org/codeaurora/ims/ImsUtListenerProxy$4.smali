@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-.field final synthetic val$error:Lcom/android/ims/ImsReasonInfo;
+.field final synthetic val$error:Landroid/telephony/ims/ImsReasonInfo;
 
 .field final synthetic val$id:I
 
@@ -28,12 +28,12 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsUtListenerProxy;
     .param p2, "val$ut"    # Lcom/android/ims/internal/IImsUt;
     .param p3, "val$id"    # I
-    .param p4, "val$error"    # Lcom/android/ims/ImsReasonInfo;
+    .param p4, "val$error"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 81
@@ -43,7 +43,7 @@
 
     iput p3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$id:I
 
-    iput-object p4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$error:Lcom/android/ims/ImsReasonInfo;
+    iput-object p4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$error:Landroid/telephony/ims/ImsReasonInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,9 +66,9 @@
 
     iget v3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$id:I
 
-    iget-object v4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$error:Lcom/android/ims/ImsReasonInfo;
+    iget-object v4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;->val$error:Landroid/telephony/ims/ImsReasonInfo;
 
-    invoke-interface {v1, v2, v3, v4}, Lcom/android/ims/internal/IImsUtListener;->utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-interface {v1, v2, v3, v4}, Lcom/android/ims/internal/IImsUtListener;->utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
