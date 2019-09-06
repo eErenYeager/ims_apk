@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionConferenceStateUpdated(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsConferenceState;)V
+    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionConferenceStateUpdated(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsConferenceState;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,15 +22,15 @@
 
 .field final synthetic val$session:Lcom/android/ims/internal/IImsCallSession;
 
-.field final synthetic val$state:Lcom/android/ims/ImsConferenceState;
+.field final synthetic val$state:Landroid/telephony/ims/ImsConferenceState;
 
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsConferenceState;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsConferenceState;)V
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
     .param p2, "val$session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p3, "val$state"    # Lcom/android/ims/ImsConferenceState;
+    .param p3, "val$state"    # Landroid/telephony/ims/ImsConferenceState;
 
     .prologue
     .line 525
@@ -38,7 +38,7 @@
 
     iput-object p2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iput-object p3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$state:Lcom/android/ims/ImsConferenceState;
+    iput-object p3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$state:Landroid/telephony/ims/ImsConferenceState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -64,9 +64,9 @@
 
     iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$state:Lcom/android/ims/ImsConferenceState;
+    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$21;->val$state:Landroid/telephony/ims/ImsConferenceState;
 
-    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionConferenceStateUpdated(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsConferenceState;)V
+    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionConferenceStateUpdated(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsConferenceState;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
