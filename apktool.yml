@@ -1,0 +1,27 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: ims.apk
+compressionType: false
+doNotCompress:
+- arsc
+- png
+- res/drawable-hdpi-v4/volte_icon
+- res/drawable-mdpi-v4/volte_icon
+- res/drawable-xhdpi-v4/volte_icon
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '10'
+  targetSdkVersion: '24'
+sharedLibrary: false
+sparseResources: true
+unknownFiles: {}
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.4.0
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'

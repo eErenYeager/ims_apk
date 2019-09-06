@@ -1,0 +1,44 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: 1JUeGW6wqcMgaOyDy//WM2NvdvA=
+X-Android-APK-Signed: 2
+
+Name: AndroidManifest.xml
+SHA1-Digest: 2dcPm3NCs3iT/6PR3xxJJFPZXVE=
+
+Name: classes.dex
+SHA1-Digest: AwpxwX2IQKV+aVg3us43W5yz02w=
+
+Name: res/drawable-hdpi-v4/ims_state.png
+SHA1-Digest: cZb+IgsiA/H3EmP6iW6mQ6NLkdI=
+
+Name: res/drawable-hdpi-v4/volte_icon
+SHA1-Digest: fY3K+/L6AyiZkN1AAptjQWf/d1M=
+
+Name: res/drawable-mdpi-v4/ims_state.png
+SHA1-Digest: DzN3CiS9u69hFqHq8SfKc5tpqBQ=
+
+Name: res/drawable-mdpi-v4/volte_icon
+SHA1-Digest: +7XTd9DYlrAgTY1jXeJnz0BI0OA=
+
+Name: res/drawable-v21/ic_qs_wifi_calling_off.xml
+SHA1-Digest: 4U6GtO1bLh/TwrqGW+T7MxzyCAI=
+
+Name: res/drawable-v21/ic_qs_wifi_calling_on.xml
+SHA1-Digest: 4iVDuqLFwrLDbxI3sLYXC7ZAt1g=
+
+Name: res/drawable-xhdpi-v4/ims_state.png
+SHA1-Digest: GMcXKVnY61t3BipvQpuZYfn4JRs=
+
+Name: res/drawable-xhdpi-v4/volte_icon
+SHA1-Digest: RdfZsUTzeianbObcvTd7uaRzP0o=
+
+Name: res/drawable/ic_qs_wifi_calling_off.xml
+SHA1-Digest: AAMJC4RPSsvAK7KgCWmy4V+JQzk=
+
+Name: res/drawable/ic_qs_wifi_calling_on.xml
+SHA1-Digest: 7UnU2jEfNFMz6Y5iBZ6d8jIdkPQ=
+
+Name: resources.arsc
+SHA1-Digest: LeT2wwMbq89daVI0xSQSojBQYW0=
+
