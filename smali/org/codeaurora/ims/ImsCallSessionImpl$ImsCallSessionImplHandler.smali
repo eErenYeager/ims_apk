@@ -630,12 +630,12 @@
     if-ne v3, v4, :cond_1
 
     .line 1023
-    new-instance v2, Lcom/android/ims/ImsStreamMediaProfile;
+    new-instance v2, Landroid/telephony/ims/ImsStreamMediaProfile;
 
-    invoke-direct {v2}, Lcom/android/ims/ImsStreamMediaProfile;-><init>()V
+    invoke-direct {v2}, Landroid/telephony/ims/ImsStreamMediaProfile;-><init>()V
 
     .line 1024
-    .local v2, "mediaProfile":Lcom/android/ims/ImsStreamMediaProfile;
+    .local v2, "mediaProfile":Landroid/telephony/ims/ImsStreamMediaProfile;
     iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionImpl$ImsCallSessionImplHandler;->this$0:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     invoke-static {v3}, Lorg/codeaurora/ims/ImsCallSessionImpl;->-get3(Lorg/codeaurora/ims/ImsCallSessionImpl;)Z
@@ -645,7 +645,7 @@
     if-eqz v3, :cond_9
 
     .line 1025
-    iput v7, v2, Lcom/android/ims/ImsStreamMediaProfile;->mAudioDirection:I
+    iput v7, v2, Landroid/telephony/ims/ImsStreamMediaProfile;->mAudioDirection:I
 
     .line 1028
     :cond_9
@@ -657,13 +657,13 @@
     iget-object v4, p0, Lorg/codeaurora/ims/ImsCallSessionImpl$ImsCallSessionImplHandler;->this$0:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     .line 1028
-    invoke-virtual {v3, v4, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+    invoke-virtual {v3, v4, v2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
 
     goto/16 :goto_0
 
     .line 1037
     .end local v0    # "ar":Landroid/os/AsyncResult;
-    .end local v2    # "mediaProfile":Lcom/android/ims/ImsStreamMediaProfile;
+    .end local v2    # "mediaProfile":Landroid/telephony/ims/ImsStreamMediaProfile;
     :pswitch_a
     iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionImpl$ImsCallSessionImplHandler;->this$0:Lorg/codeaurora/ims/ImsCallSessionImpl;
 

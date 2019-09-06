@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+    value = Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-.field final synthetic val$profile:Lcom/android/ims/ImsStreamMediaProfile;
+.field final synthetic val$profile:Landroid/telephony/ims/ImsStreamMediaProfile;
 
 .field final synthetic val$session:Lcom/android/ims/internal/IImsCallSession;
 
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
     .param p2, "val$session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p3, "val$profile"    # Lcom/android/ims/ImsStreamMediaProfile;
+    .param p3, "val$profile"    # Landroid/telephony/ims/ImsStreamMediaProfile;
 
     .prologue
     .line 82
@@ -38,7 +38,7 @@
 
     iput-object p2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iput-object p3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$profile:Lcom/android/ims/ImsStreamMediaProfile;
+    iput-object p3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$profile:Landroid/telephony/ims/ImsStreamMediaProfile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -64,9 +64,9 @@
 
     iget-object v2, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$session:Lcom/android/ims/internal/IImsCallSession;
 
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$profile:Lcom/android/ims/ImsStreamMediaProfile;
+    iget-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;->val$profile:Landroid/telephony/ims/ImsStreamMediaProfile;
 
-    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+    invoke-interface {v1, v2, v3}, Lcom/android/ims/internal/IImsCallSessionListener;->callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

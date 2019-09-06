@@ -567,10 +567,10 @@
     return-void
 .end method
 
-.method public callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+.method public callSessionProgressing(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
     .locals 2
     .param p1, "session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p2, "profile"    # Lcom/android/ims/ImsStreamMediaProfile;
+    .param p2, "profile"    # Landroid/telephony/ims/ImsStreamMediaProfile;
 
     .prologue
     .line 81
@@ -581,7 +581,7 @@
     .line 82
     new-instance v0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsStreamMediaProfile;)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsStreamMediaProfile;)V
 
     .line 93
     .local v0, "r":Ljava/lang/Runnable;
