@@ -83,7 +83,7 @@
     return-void
 .end method
 
-.method public createCallProfile(III)Lcom/android/ims/ImsCallProfile;
+.method public createCallProfile(III)Landroid/telephony/ims/ImsCallProfile;
     .locals 5
     .param p1, "serviceId"    # I
     .param p2, "serviceType"    # I
@@ -132,17 +132,17 @@
 
     .line 461
     :cond_0
-    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/ims/ImsServiceSub;->createCallProfile(III)Lcom/android/ims/ImsCallProfile;
+    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/ims/ImsServiceSub;->createCallProfile(III)Landroid/telephony/ims/ImsCallProfile;
 
     move-result-object v1
 
     return-object v1
 .end method
 
-.method public createCallSession(ILcom/android/ims/ImsCallProfile;Lcom/android/ims/internal/IImsCallSessionListener;)Lcom/android/ims/internal/IImsCallSession;
+.method public createCallSession(ILandroid/telephony/ims/ImsCallProfile;Lcom/android/ims/internal/IImsCallSessionListener;)Lcom/android/ims/internal/IImsCallSession;
     .locals 5
     .param p1, "serviceId"    # I
-    .param p2, "profile"    # Lcom/android/ims/ImsCallProfile;
+    .param p2, "profile"    # Landroid/telephony/ims/ImsCallProfile;
     .param p3, "listener"    # Lcom/android/ims/internal/IImsCallSessionListener;
 
     .prologue
@@ -188,7 +188,7 @@
 
     .line 480
     :cond_0
-    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/ims/ImsServiceSub;->createCallSession(ILcom/android/ims/ImsCallProfile;Lcom/android/ims/internal/IImsCallSessionListener;)Lorg/codeaurora/ims/ImsCallSessionImpl;
+    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/ims/ImsServiceSub;->createCallSession(ILandroid/telephony/ims/ImsCallProfile;Lcom/android/ims/internal/IImsCallSessionListener;)Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     move-result-object v1
 
