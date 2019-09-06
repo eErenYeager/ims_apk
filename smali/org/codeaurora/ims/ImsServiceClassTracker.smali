@@ -3324,38 +3324,38 @@
 
     .line 638
     .local v2, "startOnHoldLocalTone":Z
-    new-instance v3, Lcom/android/ims/ImsSuppServiceNotification;
+    new-instance v3, Landroid/telephony/ims/ImsSuppServiceNotification;
 
-    invoke-direct {v3}, Lcom/android/ims/ImsSuppServiceNotification;-><init>()V
+    invoke-direct {v3}, Landroid/telephony/ims/ImsSuppServiceNotification;-><init>()V
 
     .line 639
-    .local v3, "suppServiceInfo":Lcom/android/ims/ImsSuppServiceNotification;
+    .local v3, "suppServiceInfo":Landroid/telephony/ims/ImsSuppServiceNotification;
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNotificationType()I
 
     move-result v4
 
-    iput v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->notificationType:I
+    iput v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->notificationType:I
 
     .line 640
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getCode()I
 
     move-result v4
 
-    iput v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->code:I
+    iput v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->code:I
 
     .line 641
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getIndex()I
 
     move-result v4
 
-    iput v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->index:I
+    iput v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->index:I
 
     .line 642
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getNumber()Ljava/lang/String;
 
     move-result-object v4
 
-    iput-object v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->number:Ljava/lang/String;
+    iput-object v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->number:Ljava/lang/String;
 
     .line 643
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcNotification;->getHistoryInfo()Ljava/lang/String;
@@ -3422,12 +3422,12 @@
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 653
-    invoke-virtual {v0, v3, v2}, Lorg/codeaurora/ims/ImsCallSessionImpl;->updateSuppServiceInfo(Lcom/android/ims/ImsSuppServiceNotification;Z)V
+    invoke-virtual {v0, v3, v2}, Lorg/codeaurora/ims/ImsCallSessionImpl;->updateSuppServiceInfo(Landroid/telephony/ims/ImsSuppServiceNotification;Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .end local v1    # "forwardedCallHistory":Ljava/lang/String;
-    .end local v3    # "suppServiceInfo":Lcom/android/ims/ImsSuppServiceNotification;
+    .end local v3    # "suppServiceInfo":Landroid/telephony/ims/ImsSuppServiceNotification;
     :goto_1
     monitor-exit v5
 
@@ -3437,7 +3437,7 @@
     .line 645
     .restart local v1    # "forwardedCallHistory":Ljava/lang/String;
     .restart local v2    # "startOnHoldLocalTone":Z
-    .restart local v3    # "suppServiceInfo":Lcom/android/ims/ImsSuppServiceNotification;
+    .restart local v3    # "suppServiceInfo":Landroid/telephony/ims/ImsSuppServiceNotification;
     :cond_2
     :try_start_1
     const-string/jumbo v4, "\r\n"
@@ -3446,10 +3446,10 @@
 
     move-result-object v4
 
-    iput-object v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->history:[Ljava/lang/String;
+    iput-object v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->history:[Ljava/lang/String;
 
     .line 646
-    iget-object v4, v3, Lcom/android/ims/ImsSuppServiceNotification;->history:[Ljava/lang/String;
+    iget-object v4, v3, Landroid/telephony/ims/ImsSuppServiceNotification;->history:[Ljava/lang/String;
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsServiceClassTracker;->parsePhoneNumbers([Ljava/lang/String;)V
     :try_end_1
@@ -3461,7 +3461,7 @@
     .end local v0    # "callSession":Lorg/codeaurora/ims/ImsCallSessionImpl;
     .end local v1    # "forwardedCallHistory":Ljava/lang/String;
     .end local v2    # "startOnHoldLocalTone":Z
-    .end local v3    # "suppServiceInfo":Lcom/android/ims/ImsSuppServiceNotification;
+    .end local v3    # "suppServiceInfo":Landroid/telephony/ims/ImsSuppServiceNotification;
     :catchall_0
     move-exception v4
 

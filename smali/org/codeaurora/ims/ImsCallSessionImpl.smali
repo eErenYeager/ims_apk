@@ -7810,9 +7810,9 @@
     return-void
 .end method
 
-.method updateSuppServiceInfo(Lcom/android/ims/ImsSuppServiceNotification;Z)V
+.method updateSuppServiceInfo(Landroid/telephony/ims/ImsSuppServiceNotification;Z)V
     .locals 5
-    .param p1, "suppSvcNotification"    # Lcom/android/ims/ImsSuppServiceNotification;
+    .param p1, "suppSvcNotification"    # Landroid/telephony/ims/ImsSuppServiceNotification;
     .param p2, "startOnHoldLocalTone"    # Z
 
     .prologue
@@ -7864,14 +7864,14 @@
 
     .line 708
     :cond_0
-    iget v1, p1, Lcom/android/ims/ImsSuppServiceNotification;->notificationType:I
+    iget v1, p1, Landroid/telephony/ims/ImsSuppServiceNotification;->notificationType:I
 
     if-nez v1, :cond_2
 
     .line 709
     iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    invoke-virtual {v1, p0, p1}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsSuppServiceNotification;)V
+    invoke-virtual {v1, p0, p1}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
 
     .line 700
     :cond_1
@@ -7880,7 +7880,7 @@
 
     .line 710
     :cond_2
-    iget v1, p1, Lcom/android/ims/ImsSuppServiceNotification;->notificationType:I
+    iget v1, p1, Landroid/telephony/ims/ImsSuppServiceNotification;->notificationType:I
 
     const/4 v2, 0x1
 
@@ -7891,12 +7891,12 @@
 
     .line 712
     .local v0, "isChanged":Z
-    iget v1, p1, Lcom/android/ims/ImsSuppServiceNotification;->code:I
+    iget v1, p1, Landroid/telephony/ims/ImsSuppServiceNotification;->code:I
 
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsCallSessionImpl;->setMtSuppSvcCode(I)V
 
     .line 714
-    iget v1, p1, Lcom/android/ims/ImsSuppServiceNotification;->code:I
+    iget v1, p1, Landroid/telephony/ims/ImsSuppServiceNotification;->code:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -7908,7 +7908,7 @@
     .line 753
     iget-object v1, p0, Lorg/codeaurora/ims/ImsCallSessionImpl;->mListenerProxy:Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
 
-    invoke-virtual {v1, p0, p1}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsSuppServiceNotification;)V
+    invoke-virtual {v1, p0, p1}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
 
     .line 757
     :cond_3

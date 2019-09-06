@@ -768,10 +768,10 @@
     return-void
 .end method
 
-.method public callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsSuppServiceNotification;)V
+.method public callSessionSuppServiceReceived(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
     .locals 2
     .param p1, "session"    # Lcom/android/ims/internal/IImsCallSession;
-    .param p2, "suppServiceInfo"    # Lcom/android/ims/ImsSuppServiceNotification;
+    .param p2, "suppServiceInfo"    # Landroid/telephony/ims/ImsSuppServiceNotification;
 
     .prologue
     .line 445
@@ -782,7 +782,7 @@
     .line 446
     new-instance v0, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;-><init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsSuppServiceNotification;)V
+    invoke-direct {v0, p0, p1, p2}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy$18;-><init>(Lorg/codeaurora/ims/ImsCallSessionListenerProxy;Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsSuppServiceNotification;)V
 
     .line 456
     .local v0, "r":Ljava/lang/Runnable;
