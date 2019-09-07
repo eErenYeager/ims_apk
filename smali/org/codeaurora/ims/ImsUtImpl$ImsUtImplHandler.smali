@@ -95,10 +95,10 @@
     .local v0, "badCfResponse":Z
     array-length v6, v4
 
-    new-array v2, v6, [Lcom/android/ims/ImsCallForwardInfo;
+    new-array v2, v6, [Landroid/telephony/ims/ImsCallForwardInfo;
 
     .line 642
-    .local v2, "callForwardInfoList":[Lcom/android/ims/ImsCallForwardInfo;
+    .local v2, "callForwardInfoList":[Landroid/telephony/ims/ImsCallForwardInfo;
     const/4 v5, 0x0
 
     .local v5, "i":I
@@ -112,18 +112,18 @@
 
     .line 644
     .local v3, "cfInfo":Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
-    new-instance v1, Lcom/android/ims/ImsCallForwardInfo;
+    new-instance v1, Landroid/telephony/ims/ImsCallForwardInfo;
 
-    invoke-direct {v1}, Lcom/android/ims/ImsCallForwardInfo;-><init>()V
+    invoke-direct {v1}, Landroid/telephony/ims/ImsCallForwardInfo;-><init>()V
 
     .line 646
-    .local v1, "callForwardInfo":Lcom/android/ims/ImsCallForwardInfo;
+    .local v1, "callForwardInfo":Landroid/telephony/ims/ImsCallForwardInfo;
     iget v6, v3, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->status:I
 
     if-ne v6, v8, :cond_1
 
     .line 647
-    iput v8, v1, Lcom/android/ims/ImsCallForwardInfo;->mStatus:I
+    iput v8, v1, Landroid/telephony/ims/ImsCallForwardInfo;->mStatus:I
 
     .line 657
     :goto_1
@@ -132,7 +132,7 @@
     if-nez v6, :cond_3
 
     .line 658
-    iput v10, v1, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v10, v1, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     .line 665
     :goto_2
@@ -170,7 +170,7 @@
     if-nez v6, :cond_2
 
     .line 650
-    iput v10, v1, Lcom/android/ims/ImsCallForwardInfo;->mStatus:I
+    iput v10, v1, Landroid/telephony/ims/ImsCallForwardInfo;->mStatus:I
 
     goto :goto_1
 
@@ -204,7 +204,7 @@
 
     invoke-direct {v6, v7}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    iput-object v6, v1, Lcom/android/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
+    iput-object v6, v1, Landroid/telephony/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
 
     .line 676
     aput-object v1, v2, v5
@@ -215,7 +215,7 @@
     goto :goto_0
 
     .line 679
-    .end local v1    # "callForwardInfo":Lcom/android/ims/ImsCallForwardInfo;
+    .end local v1    # "callForwardInfo":Landroid/telephony/ims/ImsCallForwardInfo;
     .end local v3    # "cfInfo":Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
     :cond_5
     iget-object v6, p0, Lorg/codeaurora/ims/ImsUtImpl$ImsUtImplHandler;->this$0:Lorg/codeaurora/ims/ImsUtImpl;
@@ -232,7 +232,7 @@
     iget v8, p2, Landroid/os/Message;->arg1:I
 
     .line 679
-    invoke-virtual {v7, v6, v8, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+    invoke-virtual {v7, v6, v8, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     .line 624
     return-void
@@ -1758,10 +1758,10 @@
 
     move/from16 v0, v31
 
-    new-array v7, v0, [Lcom/android/ims/ImsCallForwardInfo;
+    new-array v7, v0, [Landroid/telephony/ims/ImsCallForwardInfo;
 
     .line 894
-    .local v7, "callForwardInfoList":[Lcom/android/ims/ImsCallForwardInfo;
+    .local v7, "callForwardInfoList":[Landroid/telephony/ims/ImsCallForwardInfo;
     const/16 v21, 0x0
 
     .restart local v21    # "i":I
@@ -1780,14 +1780,14 @@
     aget-object v12, v13, v21
 
     .line 896
-    .local v12, "cfInfo":Lcom/android/internal/telephony/CallForwardInfo;
-    new-instance v6, Lcom/android/ims/ImsCallForwardInfo;
+    .local v12, "cfInfo":Landroid/telephony/ims/ImsCallForwardInfo;
+    new-instance v6, Landroid/telephony/ims/ImsCallForwardInfo;
 
-    invoke-direct {v6}, Lcom/android/ims/ImsCallForwardInfo;-><init>()V
+    invoke-direct {v6}, Landroid/telephony/ims/ImsCallForwardInfo;-><init>()V
 
     .line 898
-    .local v6, "callForwardInfo":Lcom/android/ims/ImsCallForwardInfo;
-    iget v0, v12, Lcom/android/internal/telephony/CallForwardInfo;->status:I
+    .local v6, "callForwardInfo":Landroid/telephony/ims/ImsCallForwardInfo;
+    iget v0, v12, Landroid/telephony/ims/ImsCallForwardInfo;->status:I
 
     move/from16 v31, v0
 
@@ -1804,7 +1804,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mStatus:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mStatus:I
 
     .line 909
     :goto_6
@@ -1819,7 +1819,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     .line 945
     :goto_7
@@ -1885,7 +1885,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mStatus:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mStatus:I
 
     goto :goto_6
 
@@ -1923,7 +1923,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     goto :goto_7
 
@@ -1946,7 +1946,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     .line 918
     iget v0, v12, Lcom/android/internal/telephony/CallForwardInfo;->timeSeconds:I
@@ -1955,7 +1955,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mTimeSeconds:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mTimeSeconds:I
 
     goto :goto_7
 
@@ -1978,7 +1978,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     goto/16 :goto_7
 
@@ -2001,7 +2001,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     goto/16 :goto_7
 
@@ -2024,7 +2024,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mCondition:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mCondition:I
 
     goto/16 :goto_7
 
@@ -2051,7 +2051,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mToA:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mToA:I
 
     .line 953
     new-instance v31, Ljava/lang/String;
@@ -2064,7 +2064,7 @@
 
     move-object/from16 v0, v31
 
-    iput-object v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
+    iput-object v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mNumber:Ljava/lang/String;
 
     .line 954
     iget v0, v12, Lcom/android/internal/telephony/CallForwardInfo;->serviceClass:I
@@ -2073,7 +2073,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v6, Lcom/android/ims/ImsCallForwardInfo;->mServiceClass:I
+    iput v0, v6, Landroid/telephony/ims/ImsCallForwardInfo;->mServiceClass:I
 
     .line 956
     aput-object v6, v7, v21
@@ -2084,8 +2084,8 @@
     goto/16 :goto_5
 
     .line 959
-    .end local v6    # "callForwardInfo":Lcom/android/ims/ImsCallForwardInfo;
-    .end local v12    # "cfInfo":Lcom/android/internal/telephony/CallForwardInfo;
+    .end local v6    # "callForwardInfo":Landroid/telephony/ims/ImsCallForwardInfo;
+    .end local v12    # "cfInfo":Landroid/telephony/ims/ImsCallForwardInfo;
     :cond_21
     move-object/from16 v0, p0
 
@@ -2117,14 +2117,14 @@
 
     move/from16 v2, v33
 
-    invoke-virtual {v0, v1, v2, v7}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+    invoke-virtual {v0, v1, v2, v7}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     goto/16 :goto_0
 
     .line 964
     .end local v5    # "badCfResponse":Z
-    .end local v7    # "callForwardInfoList":[Lcom/android/ims/ImsCallForwardInfo;
-    .end local v13    # "cfInfoList":[Lcom/android/internal/telephony/CallForwardInfo;
+    .end local v7    # "callForwardInfoList":[Landroid/telephony/ims/ImsCallForwardInfo;
+    .end local v13    # "cfInfoList":[Landroid/telephony/ims/ImsCallForwardInfo;
     .end local v21    # "i":I
     :cond_22
     const-string/jumbo v31, "Null response received for Query CF!"

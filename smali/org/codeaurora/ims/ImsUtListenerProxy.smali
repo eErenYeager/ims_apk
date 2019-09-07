@@ -113,11 +113,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+.method public utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cfInfo"    # [Lcom/android/ims/ImsCallForwardInfo;
+    .param p3, "cfInfo"    # [Landroid/telephony/ims/ImsCallForwardInfo;
 
     .prologue
     .line 122
@@ -128,7 +128,7 @@
     .line 123
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$6;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     .line 133
     .local v0, "r":Ljava/lang/Runnable;
