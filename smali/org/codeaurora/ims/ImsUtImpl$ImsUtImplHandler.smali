@@ -563,10 +563,10 @@
     const/16 v29, 0x0
 
     .line 729
-    .local v29, "ssInfoArray":[Lcom/android/ims/ImsSsInfo;
+    .local v29, "ssInfoArray":[Landroid/telephony/ims/ImsSsInfo;
     const/16 v21, 0x0
 
-    .end local v29    # "ssInfoArray":[Lcom/android/ims/ImsSsInfo;
+    .end local v29    # "ssInfoArray":[Landroid/telephony/ims/ImsSsInfo;
     .local v21, "i":I
     :goto_1
     move/from16 v0, v21
@@ -594,12 +594,12 @@
     .local v27, "size":I
     move/from16 v0, v27
 
-    new-array v0, v0, [Lcom/android/ims/ImsSsInfo;
+    new-array v0, v0, [Landroid/telephony/ims/ImsSsInfo;
 
     move-object/from16 v29, v0
 
     .line 734
-    .local v29, "ssInfoArray":[Lcom/android/ims/ImsSsInfo;
+    .local v29, "ssInfoArray":[Landroid/telephony/ims/ImsSsInfo;
     invoke-virtual {v11}, Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;->hasServiceClass()Z
 
     move-result v31
@@ -641,12 +641,12 @@
 
     .line 742
     .local v10, "cbNumList":Lorg/codeaurora/ims/ImsQmiIF$CbNumList;
-    new-instance v28, Lcom/android/ims/ImsSsInfo;
+    new-instance v28, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct/range {v28 .. v28}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct/range {v28 .. v28}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 743
-    .local v28, "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .local v28, "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     invoke-virtual {v10}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getNumber()Ljava/lang/String;
 
     move-result-object v31
@@ -655,7 +655,7 @@
 
     move-object/from16 v1, v28
 
-    iput-object v0, v1, Lcom/android/ims/ImsSsInfo;->mIcbNum:Ljava/lang/String;
+    iput-object v0, v1, Landroid/telephony/ims/ImsSsInfo;->mIcbNum:Ljava/lang/String;
 
     .line 744
     invoke-virtual {v10}, Lorg/codeaurora/ims/ImsQmiIF$CbNumList;->getStatus()I
@@ -666,7 +666,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 745
     aput-object v28, v29, v22
@@ -681,7 +681,7 @@
     .end local v22    # "j":I
     .end local v24    # "serviceClass":Lorg/codeaurora/ims/ImsQmiIF$ServiceClass;
     .end local v25    # "service_class":I
-    .end local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .end local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     :cond_5
     add-int/lit8 v21, v21, 0x1
 
@@ -690,7 +690,7 @@
     .line 750
     .end local v11    # "cbNumListType":Lorg/codeaurora/ims/ImsQmiIF$CbNumListType;
     .end local v27    # "size":I
-    .end local v29    # "ssInfoArray":[Lcom/android/ims/ImsSsInfo;
+    .end local v29    # "ssInfoArray":[Landroid/telephony/ims/ImsSsInfo;
     :cond_6
     move-object/from16 v0, p0
 
@@ -724,7 +724,7 @@
 
     move-object/from16 v3, v29
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-virtual {v0, v1, v2, v3}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     goto/16 :goto_0
 
@@ -735,18 +735,18 @@
 
     move/from16 v0, v31
 
-    new-array v0, v0, [Lcom/android/ims/ImsSsInfo;
+    new-array v0, v0, [Landroid/telephony/ims/ImsSsInfo;
 
     move-object/from16 v30, v0
 
     .line 754
-    .local v30, "ssInfoStatus":[Lcom/android/ims/ImsSsInfo;
-    new-instance v28, Lcom/android/ims/ImsSsInfo;
+    .local v30, "ssInfoStatus":[Landroid/telephony/ims/ImsSsInfo;
+    new-instance v28, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct/range {v28 .. v28}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct/range {v28 .. v28}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 755
-    .restart local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .restart local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     invoke-virtual/range {v23 .. v23}, Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;->getStatus()I
 
     move-result v31
@@ -760,7 +760,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 760
     :cond_8
@@ -783,7 +783,7 @@
     .line 762
     move-object/from16 v0, v28
 
-    iget v0, v0, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iget v0, v0, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     move/from16 v32, v0
 
@@ -835,7 +835,7 @@
 
     move-object/from16 v3, v30
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-virtual {v0, v1, v2, v3}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     goto/16 :goto_0
 
@@ -860,15 +860,15 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     goto :goto_3
 
     .line 769
     .end local v19    # "count":I
     .end local v23    # "response":Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .end local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
-    .end local v30    # "ssInfoStatus":[Lcom/android/ims/ImsSsInfo;
+    .end local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
+    .end local v30    # "ssInfoStatus":[Landroid/telephony/ims/ImsSsInfo;
     :cond_a
     const-string/jumbo v31, "Null response received for Query CB!"
 
@@ -2310,16 +2310,16 @@
 
     move/from16 v0, v31
 
-    new-array v9, v0, [Lcom/android/ims/ImsSsInfo;
+    new-array v9, v0, [Landroid/telephony/ims/ImsSsInfo;
 
     .line 991
-    .local v9, "callWaitingInfoList":[Lcom/android/ims/ImsSsInfo;
-    new-instance v8, Lcom/android/ims/ImsSsInfo;
+    .local v9, "callWaitingInfoList":[Landroid/telephony/ims/ImsSsInfo;
+    new-instance v8, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct {v8}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct {v8}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 993
-    .local v8, "callWaitingInfo":Lcom/android/ims/ImsSsInfo;
+    .local v8, "callWaitingInfo":Landroid/telephony/ims/ImsSsInfo;
     const/16 v31, 0x0
 
     aget v31, v20, v31
@@ -2352,7 +2352,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v8, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v8, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 1013
     :goto_8
@@ -2391,7 +2391,7 @@
 
     move/from16 v2, v33
 
-    invoke-virtual {v0, v1, v2, v9}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-virtual {v0, v1, v2, v9}, Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     goto/16 :goto_0
 
@@ -2401,7 +2401,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v8, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v8, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     goto :goto_8
 
@@ -2418,7 +2418,7 @@
 
     move/from16 v0, v31
 
-    iput v0, v8, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v8, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     goto :goto_8
 
@@ -2480,8 +2480,8 @@
     return-void
 
     .line 1020
-    .end local v8    # "callWaitingInfo":Lcom/android/ims/ImsSsInfo;
-    .end local v9    # "callWaitingInfoList":[Lcom/android/ims/ImsSsInfo;
+    .end local v8    # "callWaitingInfo":Landroid/telephony/ims/ImsSsInfo;
+    .end local v9    # "callWaitingInfoList":[Landroid/telephony/ims/ImsSsInfo;
     .end local v20    # "cwResponse":[I
     :cond_28
     const-string/jumbo v31, "Null response received for Query CW!"
@@ -2888,12 +2888,12 @@
     if-eqz v15, :cond_0
 
     .line 1076
-    new-instance v28, Lcom/android/ims/ImsSsInfo;
+    new-instance v28, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct/range {v28 .. v28}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct/range {v28 .. v28}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 1077
-    .restart local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .restart local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     invoke-virtual {v15}, Lorg/codeaurora/ims/ImsQmiIF$ClipProvisionStatus;->getClipStatus()I
 
     move-result v31
@@ -2902,7 +2902,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 1078
     new-instance v14, Landroid/os/Bundle;
@@ -2989,7 +2989,7 @@
     .end local v4    # "ar":Landroid/os/AsyncResult;
     .end local v14    # "clInfo":Landroid/os/Bundle;
     .end local v15    # "clipStatus":Lorg/codeaurora/ims/ImsQmiIF$ClipProvisionStatus;
-    .end local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .end local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     :pswitch_7
     move-object/from16 v0, p1
 
@@ -3137,12 +3137,12 @@
     if-eqz v18, :cond_0
 
     .line 1106
-    new-instance v28, Lcom/android/ims/ImsSsInfo;
+    new-instance v28, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct/range {v28 .. v28}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct/range {v28 .. v28}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 1107
-    .restart local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .restart local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     invoke-virtual/range {v18 .. v18}, Lorg/codeaurora/ims/ImsQmiIF$Colr;->getPresentation()I
 
     move-result v31
@@ -3151,7 +3151,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 1108
     new-instance v14, Landroid/os/Bundle;
@@ -3238,7 +3238,7 @@
     .end local v4    # "ar":Landroid/os/AsyncResult;
     .end local v14    # "clInfo":Landroid/os/Bundle;
     .end local v18    # "colr":Lorg/codeaurora/ims/ImsQmiIF$Colr;
-    .end local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .end local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     :pswitch_8
     move-object/from16 v0, p1
 
@@ -3435,12 +3435,12 @@
     .line 1146
     .end local v26    # "sipError":Lorg/codeaurora/ims/ImsQmiIF$SipErrorInfo;
     :cond_32
-    new-instance v28, Lcom/android/ims/ImsSsInfo;
+    new-instance v28, Landroid/telephony/ims/ImsSsInfo;
 
-    invoke-direct/range {v28 .. v28}, Lcom/android/ims/ImsSsInfo;-><init>()V
+    invoke-direct/range {v28 .. v28}, Landroid/telephony/ims/ImsSsInfo;-><init>()V
 
     .line 1147
-    .restart local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .restart local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     new-instance v14, Landroid/os/Bundle;
 
     invoke-direct {v14}, Landroid/os/Bundle;-><init>()V
@@ -3471,7 +3471,7 @@
 
     move-object/from16 v1, v28
 
-    iput v0, v1, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iput v0, v1, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     .line 1151
     new-instance v31, Ljava/lang/StringBuilder;
@@ -3503,7 +3503,7 @@
     .line 1152
     move-object/from16 v0, v28
 
-    iget v0, v0, Lcom/android/ims/ImsSsInfo;->mStatus:I
+    iget v0, v0, Landroid/telephony/ims/ImsSsInfo;->mStatus:I
 
     move/from16 v32, v0
 
@@ -3579,7 +3579,7 @@
     .end local v4    # "ar":Landroid/os/AsyncResult;
     .end local v14    # "clInfo":Landroid/os/Bundle;
     .end local v23    # "response":Lorg/codeaurora/ims/ImsQmiIF$SuppSvcResponse;
-    .end local v28    # "ssInfo":Lcom/android/ims/ImsSsInfo;
+    .end local v28    # "ssInfo":Landroid/telephony/ims/ImsSsInfo;
     :pswitch_9
     move-object/from16 v0, p1
 

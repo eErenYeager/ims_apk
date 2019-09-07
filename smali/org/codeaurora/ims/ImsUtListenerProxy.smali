@@ -86,11 +86,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+.method public utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cbInfo"    # [Lcom/android/ims/ImsSsInfo;
+    .param p3, "cbInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
     .prologue
     .line 101
@@ -101,7 +101,7 @@
     .line 102
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 112
     .local v0, "r":Ljava/lang/Runnable;
@@ -140,11 +140,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+.method public utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cwInfo"    # [Lcom/android/ims/ImsSsInfo;
+    .param p3, "cwInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
     .prologue
     .line 143
@@ -155,7 +155,7 @@
     .line 144
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$7;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 154
     .local v0, "r":Ljava/lang/Runnable;
