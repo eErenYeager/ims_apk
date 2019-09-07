@@ -12,7 +12,6 @@
     <permission android:name="com.qti.permission.DIAG" android:protectionLevel="signatureOrSystem"/>
     <permission android:name="com.qti.permission.AUDIO" android:protectionLevel="signatureOrSystem"/>
     <application android:directBootAware="true">
-        <uses-library android:name="com.qti.vzw.ims.internal"/>
         <receiver android:name="ImsServiceAutoboot">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
