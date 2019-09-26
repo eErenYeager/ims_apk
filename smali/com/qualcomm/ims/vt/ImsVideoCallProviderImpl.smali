@@ -1,5 +1,5 @@
 .class public Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
-.super Lcom/android/ims/internal/ImsVideoCallProvider;
+.super Landroid/telephony/ims/ImsVideoCallProvider;
 .source "ImsVideoCallProviderImpl.java"
 
 # interfaces
@@ -60,7 +60,7 @@
 
     .prologue
     .line 43
-    invoke-direct {p0}, Lcom/android/ims/internal/ImsVideoCallProvider;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/ims/ImsVideoCallProvider;-><init>()V
 
     .line 44
     new-instance v0, Ljava/lang/StringBuilder;
