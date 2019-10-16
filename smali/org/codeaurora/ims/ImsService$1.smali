@@ -21,10 +21,8 @@
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsService;)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsService;
 
-    .prologue
-    .line 134
+    .line 171
     iput-object p1, p0, Lorg/codeaurora/ims/ImsService$1;->this$0:Lorg/codeaurora/ims/ImsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,105 +33,89 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .locals 2
 
-    .prologue
-    .line 136
+    .line 173
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 174
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "mBroadcastReceiver - "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 137
-    .local v0, "action":Ljava/lang/String;
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 175
+    const-string v0, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
-    const-string/jumbo v3, "mBroadcastReceiver - "
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v2
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 176
+    const-string p1, "subscription"
 
-    move-result-object v2
+    const/4 v0, -0x1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result-object v2
+    move-result p1
 
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 178
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    .line 138
-    const-string/jumbo v2, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v0, "got ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED, new DDS = "
 
-    move-result v2
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v2, :cond_1
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 139
-    const-string/jumbo v2, "subscription"
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 140
-    const/4 v3, -0x1
+    move-result-object p2
 
-    .line 139
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-static {p0, p2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v1
+    .line 180
+    iget-object p2, p0, Lorg/codeaurora/ims/ImsService$1;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    .line 141
-    .local v1, "ddsSubId":I
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {p2, p1}, Lorg/codeaurora/ims/ImsService;->access$000(Lorg/codeaurora/ims/ImsService;I)V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 181
+    goto :goto_0
 
-    const-string/jumbo v3, "got ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED, new DDS = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 143
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsService$1;->this$0:Lorg/codeaurora/ims/ImsService;
-
-    invoke-static {v2, v1}, Lorg/codeaurora/ims/ImsService;->-wrap2(Lorg/codeaurora/ims/ImsService;I)V
-
-    .line 135
-    .end local v1    # "ddsSubId":I
     :cond_0
+    const-string p2, "org.codeaurora.intent.action.ACTION_RADIO_CAPABILITY_UPDATED"
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    .line 182
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsService$1;->this$0:Lorg/codeaurora/ims/ImsService;
+
+    invoke-static {p1}, Lorg/codeaurora/ims/ImsService;->access$100(Lorg/codeaurora/ims/ImsService;)V
+
+    .line 184
+    :cond_1
     :goto_0
     return-void
-
-    .line 144
-    :cond_1
-    const-string/jumbo v2, "org.codeaurora.intent.action.ACTION_RADIO_CAPABILITY_UPDATED"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 145
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsService$1;->this$0:Lorg/codeaurora/ims/ImsService;
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsService;->-wrap1(Lorg/codeaurora/ims/ImsService;)V
-
-    goto :goto_0
 .end method
