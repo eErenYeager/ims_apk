@@ -6452,7 +6452,7 @@
     return-object v0
 .end method
 
-.method public getEcbmInterface()Lcom/android/ims/internal/IImsEcbm;
+.method public getEcbmInterface()Landroid/telephony/ims/stub/ImsEcbmImplBase;
     .locals 1
 
     .prologue
