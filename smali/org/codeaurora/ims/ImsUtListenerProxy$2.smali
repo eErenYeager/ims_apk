@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
+    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationUpdateFailed(ILandroid/telephony/ims/ImsReasonInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,26 +24,17 @@
 
 .field final synthetic val$id:I
 
-.field final synthetic val$ut:Lcom/android/ims/internal/IImsUt;
-
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsUtListenerProxy;
-    .param p2, "val$ut"    # Lcom/android/ims/internal/IImsUt;
-    .param p3, "val$id"    # I
-    .param p4, "val$error"    # Landroid/telephony/ims/ImsReasonInfo;
 
-    .prologue
-    .line 42
+    .line 44
     iput-object p1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    iput-object p2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$ut:Lcom/android/ims/internal/IImsUt;
+    iput p2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$id:I
 
-    iput p3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$id:I
-
-    iput-object p4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$error:Landroid/telephony/ims/ImsReasonInfo;
+    iput-object p3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$error:Landroid/telephony/ims/ImsReasonInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,40 +44,37 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    .prologue
-    .line 46
+    .line 48
     :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    iget-object v1, v1, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v0, v0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Landroid/telephony/ims/ImsUtListener;
 
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$ut:Lcom/android/ims/internal/IImsUt;
+    iget v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$id:I
 
-    iget v3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$id:I
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$error:Landroid/telephony/ims/ImsReasonInfo;
 
-    iget-object v4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->val$error:Landroid/telephony/ims/ImsReasonInfo;
-
-    invoke-interface {v1, v2, v3, v4}, Lcom/android/ims/internal/IImsUtListener;->utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
+    invoke-virtual {v0, v1, v2}, Landroid/telephony/ims/ImsUtListener;->onUtConfigurationUpdateFailed(ILandroid/telephony/ims/ImsReasonInfo;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 44
-    :goto_0
-    return-void
+    .line 51
+    goto :goto_0
 
-    .line 47
+    .line 49
     :catch_0
     move-exception v0
 
-    .line 48
-    .local v0, "t":Ljava/lang/Throwable;
+    .line 50
     iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    const-string/jumbo v2, "utConfigurationUpdateFailed()"
+    const-string v2, "onUtConfigurationUpdateFailed()"
 
-    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->-wrap0(Lorg/codeaurora/ims/ImsUtListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->access$000(Lorg/codeaurora/ims/ImsUtListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 52
+    :goto_0
+    return-void
 .end method

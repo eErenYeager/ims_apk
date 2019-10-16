@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
+    value = Lorg/codeaurora/ims/ImsUtListenerProxy;->utConfigurationCallBarringQueried(I[Landroid/telephony/ims/ImsSsInfo;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,26 +24,17 @@
 
 .field final synthetic val$id:I
 
-.field final synthetic val$ut:Lcom/android/ims/internal/IImsUt;
-
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsUtListenerProxy;I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsUtListenerProxy;
-    .param p2, "val$ut"    # Lcom/android/ims/internal/IImsUt;
-    .param p3, "val$id"    # I
-    .param p4, "val$cbInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
-    .prologue
-    .line 102
+    .line 109
     iput-object p1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    iput-object p2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$ut:Lcom/android/ims/internal/IImsUt;
+    iput p2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$id:I
 
-    iput p3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$id:I
-
-    iput-object p4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$cbInfo:[Landroid/telephony/ims/ImsSsInfo;
+    iput-object p3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$cbInfo:[Landroid/telephony/ims/ImsSsInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,40 +44,37 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    .prologue
-    .line 106
+    .line 113
     :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    iget-object v1, v1, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Lcom/android/ims/internal/IImsUtListener;
+    iget-object v0, v0, Lorg/codeaurora/ims/ImsUtListenerProxy;->mListener:Landroid/telephony/ims/ImsUtListener;
 
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$ut:Lcom/android/ims/internal/IImsUt;
+    iget v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$id:I
 
-    iget v3, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$id:I
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$cbInfo:[Landroid/telephony/ims/ImsSsInfo;
 
-    iget-object v4, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->val$cbInfo:[Landroid/telephony/ims/ImsSsInfo;
-
-    invoke-interface {v1, v2, v3, v4}, Lcom/android/ims/internal/IImsUtListener;->utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
+    invoke-virtual {v0, v1, v2}, Landroid/telephony/ims/ImsUtListener;->onUtConfigurationCallBarringQueried(I[Landroid/telephony/ims/ImsSsInfo;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 104
-    :goto_0
-    return-void
+    .line 116
+    goto :goto_0
 
-    .line 107
+    .line 114
     :catch_0
     move-exception v0
 
-    .line 108
-    .local v0, "t":Ljava/lang/Throwable;
+    .line 115
     iget-object v1, p0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;->this$0:Lorg/codeaurora/ims/ImsUtListenerProxy;
 
-    const-string/jumbo v2, "utConfigurationCallBarringQueried()"
+    const-string v2, "onUtConfigurationCallBarringQueried()"
 
-    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->-wrap0(Lorg/codeaurora/ims/ImsUtListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lorg/codeaurora/ims/ImsUtListenerProxy;->access$000(Lorg/codeaurora/ims/ImsUtListenerProxy;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    goto :goto_0
+    .line 117
+    :goto_0
+    return-void
 .end method
