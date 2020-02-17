@@ -12,7 +12,7 @@ import android.os.BatteryManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 
 import java.util.List;
 

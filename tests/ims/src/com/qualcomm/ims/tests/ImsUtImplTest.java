@@ -10,7 +10,7 @@ import android.os.AsyncResult;
 import android.os.Message;
 import android.test.AndroidTestCase;
 import android.util.Log;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.ims.internal.IImsUt;
 import java.lang.reflect.*;
 import org.codeaurora.ims.ImsQmiIF;

@@ -22,11 +22,11 @@
 
 package org.codeaurora.ims;
 
-import com.android.ims.ImsCallProfile;
-import com.android.ims.ImsConferenceState;
-import com.android.ims.ImsReasonInfo;
-import com.android.ims.ImsStreamMediaProfile;
-import com.android.ims.ImsSuppServiceNotification;
+import android.telephony.ims.ImsCallProfile;
+import android.telephony.ims.ImsConferenceState;
+import android.telephony.ims.ImsReasonInfo;
+import android.telephony.ims.ImsStreamMediaProfile;
+import android.telephony.ims.ImsSuppServiceNotification;
 import com.android.ims.internal.IImsCallSession;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.qualcomm.ims.utils.Log;

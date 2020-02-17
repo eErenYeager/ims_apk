@@ -15,9 +15,9 @@ import static com.android.internal.telephony.CommandsInterface.CB_FACILITY_BA_AL
 import static com.android.internal.telephony.CommandsInterface.CB_FACILITY_BA_MO;
 import static com.android.internal.telephony.CommandsInterface.CB_FACILITY_BA_MT;
 
-import com.android.ims.ImsCallForwardInfo;
-import com.android.ims.ImsReasonInfo;
-import com.android.ims.ImsSsInfo;
+import android.telephony.ims.ImsCallForwardInfo;
+import android.telephony.ims.ImsReasonInfo;
+import android.telephony.ims.ImsSsInfo;
 import com.android.ims.ImsUtInterface;
 import com.android.ims.internal.IImsUt;
 import com.android.ims.internal.IImsUtListener;

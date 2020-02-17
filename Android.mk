@@ -29,6 +29,8 @@ LOCAL_REQUIRED_MODULES := libimsmedia_jni libimscamera_jni
 
 LOCAL_PROPRIETARY_MODULE := true
 
+LOCAL_PRIVATE_PLATFORM_APIS := true
+
 LOCAL_PROTOC_OPTIMIZE_TYPE := micro
 
 LOCAL_SRC_FILES := $(call all-java-files-under, $(src_java_ims)) \

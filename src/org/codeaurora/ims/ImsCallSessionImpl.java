@@ -27,20 +27,21 @@ package org.codeaurora.ims;
 import org.codeaurora.ims.parser.ConfInfo;
 
 
-import com.android.ims.ImsCallProfile;
-import com.android.ims.ImsConferenceState;
+import android.telephony.ims.ImsCallProfile;
+import android.telephony.ims.ImsConferenceState;
 import com.android.ims.ImsException;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.ims.ImsServiceClass;
-import com.android.ims.ImsStreamMediaProfile;
-import com.android.ims.ImsSuppServiceNotification;
-import com.android.ims.internal.ImsCallSession;
+import android.telephony.ims.ImsStreamMediaProfile;
+import android.telephony.ims.ImsSuppServiceNotification;
+import android.telephony.ims.ImsCallSession;
 import com.android.ims.internal.IImsCallSession;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.android.ims.internal.IImsVideoCallProvider;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.telephony.gsm.SuppServiceNotification;
+import android.telephony.ims.compat.stub.ImsCallSessionImplBase;
 
 import android.app.PendingIntent;
 import android.app.Service;
@@ -75,7 +76,7 @@ import org.codeaurora.ims.utils.QtiImsExtUtils;
 import org.codeaurora.ims.QtiCallConstants;
 import org.codeaurora.ims.QtiVideoCallDataUsage;
 
-public class ImsCallSessionImpl extends IImsCallSession.Stub {
+public class ImsCallSessionImpl extends ImsCallSessionImplBase {
     private static final int EVENT_DIAL = 1;
     private static final int EVENT_ACCEPT = 2;
     private static final int EVENT_HANGUP = 3;

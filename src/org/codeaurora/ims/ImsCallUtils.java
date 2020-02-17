@@ -11,9 +11,9 @@ import android.os.SystemProperties;
 import android.telecom.VideoProfile;
 import android.telecom.Connection.VideoProvider;
 
-import com.android.ims.ImsCallProfile;
+import android.telephony.ims.ImsCallProfile;
 import com.android.ims.ImsConfig;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.CarrierAppUtils;
 import com.android.internal.telephony.DriverCall;

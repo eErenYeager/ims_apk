@@ -6,7 +6,7 @@ package com.qualcomm.qti.ims.tests;
 import android.content.Context;
 import android.test.AndroidTestCase;
 import android.util.Log;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import org.codeaurora.ims.ImsSenderRxr;

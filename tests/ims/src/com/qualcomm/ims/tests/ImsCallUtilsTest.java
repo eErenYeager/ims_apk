@@ -6,7 +6,7 @@ package com.qualcomm.qti.ims.tests;
 
 import android.os.AsyncResult;
 import android.test.AndroidTestCase;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import org.codeaurora.ims.ImsCallUtils;
 import org.codeaurora.ims.ImsQmiIF;
 import org.codeaurora.ims.ImsRilException;

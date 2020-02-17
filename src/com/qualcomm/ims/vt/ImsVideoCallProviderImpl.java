@@ -16,7 +16,7 @@ import android.telecom.VideoProfile;
 import android.util.Log;
 import android.view.Surface;
 
-import com.android.ims.internal.ImsVideoCallProvider;
+import android.telephony.ims.ImsVideoCallProvider;
 
 import org.codeaurora.ims.CallDetails;
 import org.codeaurora.ims.CallModify;

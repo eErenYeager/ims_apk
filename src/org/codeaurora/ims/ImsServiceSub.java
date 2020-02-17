@@ -24,15 +24,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.android.ims.ImsCallProfile;
+import android.telephony.ims.ImsCallProfile;
 import com.android.ims.ImsConfig;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.ims.ImsServiceClass;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.android.ims.internal.IImsRegistrationListener;
 import com.android.ims.internal.IImsEcbm;
 import com.android.ims.internal.IImsUtListener;
-import com.android.ims.internal.ImsCallSession;
+import android.telephony.ims.ImsCallSession;
 import com.android.internal.telephony.CallForwardInfo;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.DriverCall;

@@ -6,7 +6,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_JAVA_LIBRARIES := telephony-common ims-common
 LOCAL_STATIC_JAVA_LIBRARIES := ims-ext-common
-
+LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PACKAGE_NAME := imssettings
 LOCAL_CERTIFICATE := platform
 LOCAL_PROGUARD_ENABLED := disabled

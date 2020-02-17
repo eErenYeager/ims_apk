@@ -23,7 +23,7 @@
 
 package org.codeaurora.ims;
 
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.internal.telephony.ATParseEx;
 import com.android.internal.telephony.DriverCall;
 

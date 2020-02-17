@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.android.ims.ImsConferenceState;
+import android.telephony.ims.ImsConferenceState;
 
 import android.os.Bundle;
 import android.os.Parcel;

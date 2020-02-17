@@ -27,14 +27,14 @@ import android.os.Message;
 import android.telephony.VoLteServiceState;
 import android.widget.Toast;
 
-import com.android.ims.ImsCallProfile;
+import android.telephony.ims.ImsCallProfile;
 import com.android.ims.ImsManager;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.ims.ImsServiceClass;
-import com.android.ims.ImsSuppServiceNotification;
+import android.telephony.ims.ImsSuppServiceNotification;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.android.ims.internal.IImsRegistrationListener;
-import com.android.ims.internal.ImsCallSession;
+import android.telephony.ims.ImsCallSession;
 import com.android.ims.internal.IImsCallSession;
 import com.android.internal.telephony.Call;
 import com.qualcomm.ims.utils.Log;
