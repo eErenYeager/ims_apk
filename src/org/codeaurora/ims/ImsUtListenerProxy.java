@@ -10,24 +10,25 @@ import android.telephony.ims.ImsSsInfo;
 import com.android.ims.internal.IImsUt;
 import com.android.ims.internal.IImsUtListener;
 import com.qualcomm.ims.utils.Log;
+import android.telephony.ims.ImsUtListener;
 
 import android.os.Bundle;
 
-public class ImsUtListenerProxy extends IImsUtListener.Stub {
-    public IImsUtListener mListener;
+public class ImsUtListenerProxy {
+    public ImsUtListener mListener;
 
     /**
      * Notifies the result of the supplementary service configuration update.
      */
-    public void utConfigurationUpdated(final IImsUt ut, final int id) {
+    public void utConfigurationUpdated(final int id) {
         if (mListener != null) {
             final Runnable r = new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationUpdated(ut, id);
+                        mListener.onUtConfigurationUpdated(id);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationUpdated()");
+                        handleError(t, "onUtConfigurationUpdated()");
                     }
                 }
             };
@@ -35,7 +36,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
         }
     }
 
-    public void utConfigurationUpdateFailed(final IImsUt ut,
+    public void utConfigurationUpdateFailed(
                                             final int id,
                                             final ImsReasonInfo error) {
         if (mListener != null) {
@@ -43,9 +44,9 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationUpdateFailed(ut, id, error);
+                        mListener.onUtConfigurationUpdateFailed(id, error);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationUpdateFailed()");
+                        handleError(t, "onUtConfigurationUpdateFailed()");
                     }
                 }
             };
@@ -56,7 +57,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
     /**
      * Notifies the result of the supplementary service configuration query.
      */
-    public void utConfigurationQueried(final IImsUt ut,
+    public void utConfigurationQueried(
                                        final int id,
                                        final Bundle ssInfo) {
         if (mListener != null) {
@@ -64,9 +65,9 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationQueried(ut, id, ssInfo);
+                        mListener.onUtConfigurationQueried(id, ssInfo);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationQueried()");
+                        handleError(t, "onUtConfigurationQueried()");
                     }
                 }
             };
@@ -74,7 +75,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
         }
     }
 
-    public void utConfigurationQueryFailed(final IImsUt ut,
+    public void utConfigurationQueryFailed(
                                            final int id,
                                            final ImsReasonInfo error) {
         if (mListener != null) {
@@ -82,7 +83,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationQueryFailed(ut, id, error);
+                        mListener.onUtConfigurationQueryFailed(id, error);
                     } catch (Throwable t) {
                         handleError(t, "utConfigurationQueryFailed()");
                     }
@@ -95,7 +96,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
     /**
      * Notifies the status of the call barring supplementary service.
      */
-    public void utConfigurationCallBarringQueried(final IImsUt ut,
+    public void utConfigurationCallBarringQueried(
                                                   final int id,
                                                   final ImsSsInfo[] cbInfo) {
         if (mListener != null) {
@@ -103,9 +104,9 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationCallBarringQueried(ut, id, cbInfo);
+                        mListener.onUtConfigurationCallBarringQueried(id, cbInfo);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationCallBarringQueried()");
+                        handleError(t, "onUtConfigurationCallBarringQueried()");
                     }
                 }
             };
@@ -116,7 +117,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
     /**
      * Notifies the status of the call forwarding supplementary service.
      */
-    public void utConfigurationCallForwardQueried(final IImsUt ut,
+    public void utConfigurationCallForwardQueried(
                                                   final int id,
                                                   final ImsCallForwardInfo[] cfInfo) {
         if (mListener != null) {
@@ -124,9 +125,9 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationCallForwardQueried(ut, id, cfInfo);
+                        mListener.onUtConfigurationCallForwardQueried(id, cfInfo);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationCallForwardQueried()");
+                        handleError(t, "onUtConfigurationCallForwardQueried()");
                     }
                 }
             };
@@ -137,7 +138,7 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
     /**
      * Notifies the status of the call waiting supplementary service.
      */
-    public void utConfigurationCallWaitingQueried(final IImsUt ut,
+    public void utConfigurationCallWaitingQueried(
                                                   final int id,
                                                   final ImsSsInfo[] cwInfo) {
         if (mListener != null) {
@@ -145,9 +146,9 @@ public class ImsUtListenerProxy extends IImsUtListener.Stub {
                 @Override
                 public void run() {
                     try {
-                        mListener.utConfigurationCallWaitingQueried(ut, id, cwInfo);
+                        mListener.onUtConfigurationCallWaitingQueried(id, cwInfo);
                     } catch (Throwable t) {
-                        handleError(t, "utConfigurationCallWaitingQueried()");
+                        handleError(t, "onUtConfigurationCallWaitingQueried()");
                     }
                 }
             };

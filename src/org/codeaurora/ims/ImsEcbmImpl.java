@@ -13,8 +13,9 @@ import java.util.Map;
 import android.os.Handler;
 import android.os.Message;
 import android.os.RemoteException;
+import android.telephony.ims.stub.ImsEcbmImplBase;
 
-public class ImsEcbmImpl extends IImsEcbm.Stub {
+public class ImsEcbmImpl extends ImsEcbmImplBase {
 
     private final int EVENT_ENTER_EMERGENCY_CALLBACK_MODE = 1;
     private final int EVENT_EXIT_EMERGENCY_CALLBACK_MODE = 2;

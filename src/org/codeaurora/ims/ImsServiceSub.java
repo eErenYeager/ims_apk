@@ -63,6 +63,7 @@ import android.os.Looper;
 import android.os.RegistrantList;
 import android.os.RemoteException;
 import android.telephony.TelephonyManager;
+import android.telephony.ims.stub.ImsEcbmImplBase;
 
 public class ImsServiceSub {
     protected ImsSenderRxr mCi = null; /* Commands Interface */
@@ -455,7 +456,7 @@ public class ImsServiceSub {
      * Get the ECBM interface handle.
      * @return IImsEcbm interface handle.
      */
-    public IImsEcbm getEcbmInterface() {
+    public ImsEcbmImplBase getEcbmInterface() {
         return mImsEcbmImpl;
     }
 
