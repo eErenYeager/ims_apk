@@ -5,7 +5,7 @@
       android:sharedUserId="android.uid.phone"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="10"/>
+    <uses-sdk android:minSdkVersion="28"/>
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -28,7 +28,7 @@
 
 
     <application android:directBootAware="true">
-        <uses-library android:name="com.qti.vzw.ims.internal" />
+        
 
       <receiver android:name="ImsServiceAutoboot">
          <intent-filter>
@@ -42,10 +42,15 @@
                android:enabled="true"
                android:persistent="true"
                android:singleUser="true"
-               android:process="com.android.phone">
+               android:process="com.android.phone"
+               android:permission="android.permission.BIND_IMS_SERVICE">
+         <meta-data android:name="android.telephony.ims.MMTEL_FEATURE" android:value="true"/>
+        	<intent-filter>
+        	   <action android:name="android.telephony.ims.compat.ImsService"/>
+        	</intent-filter>
       </service>
       <receiver android:name="org.codeaurora.ims.WifiCallingQuickSettingsReceiver"
-         android:exported="false"
+         android:exported="true"
          android:label="WifiCallingQuickSettingsReceiver">
          <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED" />
