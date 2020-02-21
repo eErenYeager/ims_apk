@@ -117,8 +117,7 @@ public class ImsService extends android.telephony.ims.compat.ImsService {
         // Adding QtiImsExtBinder to ServiceManager
         // For now using DEFAULT_PHONE_ID will migrate once mServiceSub
         // has multiple instances.
-        ServiceManager.addService(QtiImsExtManager.SERVICE_ID,
-                mServiceSub[DEFAULT_PHONE_ID].getQtiImsExtBinder());
+        ServiceManager.addService("qti.ims.ext", mServiceSub[DEFAULT_PHONE_ID].getQtiImsExtBinder());
 
         
 
@@ -166,7 +165,7 @@ public class ImsService extends android.telephony.ims.compat.ImsService {
     private void initCallDeflectStatus() {
         android.provider.Settings.Global.putInt(
                   this.getContentResolver(),
-                  QtiImsExtUtils.QTI_IMS_DEFLECT_ENABLED, 0);
+                  "qti.ims.call_deflect", 0);
     }
 
 

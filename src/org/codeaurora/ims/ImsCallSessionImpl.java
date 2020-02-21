@@ -1624,7 +1624,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
                 dc.callDetails.causeCode == CallDetails.CAUSE_CODE_UNSPECIFIED) {
             mCallProfile.setCallExtraInt(
                     QtiCallConstants.SESSION_MODIFICATION_CAUSE_EXTRA_KEY,
-                    QtiCallConstants.CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_GENERIC);
+                    QtiCallConstants.CAUSE_CODE_SESSION_MODIFY_DOWNGRADE_GENERIC_ERROR);
         }
 
         maybeUpdateLowBatteryStatus();

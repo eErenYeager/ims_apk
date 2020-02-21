@@ -30,6 +30,8 @@ import android.telephony.ims.ImsSuppServiceNotification;
 import com.android.ims.internal.IImsCallSession;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.qualcomm.ims.utils.Log;
+import android.telephony.CallQuality;
+import android.telephony.ims.ImsStreamMediaProfile;
 
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -612,4 +614,30 @@ public class ImsCallSessionListenerProxy extends IImsCallSessionListener.Stub {
     private void handleError(Throwable t, String message) {
        Log.e(this, t + " " + message);
     }
+    
+    public void callQualityChanged(CallQuality callQuality) {
+    
+    }
+    
+    public void callSessionRttAudioIndicatorChanged(ImsStreamMediaProfile ImsStreamMediaProfile) {
+    
+    }
+    
+    public void callSessionRttMessageReceived(String rttMessage) {
+            
+        }
+    
+    public void callSessionRttModifyResponseReceived(int status) {
+            
+        }
+    
+    public void callSessionRttModifyRequestReceived(IImsCallSession i,
+                ImsCallProfile imsCallProfile) {
+            
+        }
+    
+    public void callSessionMayHandover(IImsCallSession i, int srcAccessTech, int targetAccessTech)
+                {
+            
+        }
 }

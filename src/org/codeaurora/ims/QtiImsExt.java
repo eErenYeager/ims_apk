@@ -24,7 +24,7 @@ public class QtiImsExt extends QtiImsExtBase {
     }
 
     @Override
-    protected void onSetCallForwardUncondTimer(int startHour, int startMinute, int endHour,
+    protected void onSetCallForwardUncondTimer(int phoneId, int startHour, int startMinute, int endHour,
             int endMinute, int action, int condition, int serviceClass, String number,
             IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE, "setCallForwardUncondTimer");
@@ -33,26 +33,26 @@ public class QtiImsExt extends QtiImsExtBase {
     }
 
     @Override
-    protected void onGetCallForwardUncondTimer(int reason, int serviceClass,
+    protected void onGetCallForwardUncondTimer(int phoneId, int reason, int serviceClass,
             IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "getCallForwardUncondTimer");
         mServiceSub.getCallForwardUncondTimer(reason,
                 serviceClass, listener);
     }
 
-    @Override
-    protected void onGetPacketCount(IQtiImsExtListener listener) {
+    
+    protected void onGetPacketCount(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "getPacketCount");
         mServiceSub.getPacketCount(listener);
     }
 
-    @Override
-    protected void onGetPacketErrorCount(IQtiImsExtListener listener) {
+    
+    protected void onGetPacketErrorCount(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "getPacketErrorCount");
         mServiceSub.getPacketErrorCount(listener);
     }
 
-    @Override
+    
     protected void onSendCallDeflectRequest(int phoneId, String deflectNumber,
             IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE, "sendCallDeflectRequest");
@@ -60,7 +60,7 @@ public class QtiImsExt extends QtiImsExtBase {
     }
 
     @Override
-    protected void onResumePendingCall(int videoState) {
+    protected void onResumePendingCall(int phoneId, int videoState) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE, "resumePendingCall");
         mServiceSub.resumePendingCall(videoState);
     }
@@ -73,31 +73,31 @@ public class QtiImsExt extends QtiImsExtBase {
     }
 
     @Override
-    protected void onQueryVopsStatus(IQtiImsExtListener listener) {
+    protected void onQueryVopsStatus(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "queryVopsStatus");
         mServiceSub.queryVopsStatus(listener);
     }
 
     @Override
-    protected void onQuerySsacStatus(IQtiImsExtListener listener) {
+    protected void onQuerySsacStatus(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "querySsacStatus");
         mServiceSub.querySsacStatus(listener);
     }
 
-    @Override
+    
     protected int onGetImsPhoneId() {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "getImsPhoneId");
         return mServiceSub.getImsPhoneId();
     }
 
     @Override
-    protected void onRegisterForViceRefreshInfo(IQtiImsExtListener listener) {
+    protected void onRegisterForViceRefreshInfo(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE, "registerForViceRefreshInfo");
         mServiceSub.registerForViceRefreshInfo(listener);
     }
 
     @Override
-    protected void onRegisterForParticipantStatusInfo(IQtiImsExtListener listener) {
+    protected void onRegisterForParticipantStatusInfo(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE,
                 "registerForParticipantStatusInfo");
         mServiceSub.registerForParticipantStatusInfo(listener);
@@ -117,13 +117,13 @@ public class QtiImsExt extends QtiImsExtBase {
     }
 
     @Override
-    protected void onGetHandoverConfig(IQtiImsExtListener listener) {
+    protected void onGetHandoverConfig(int phoneId, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "getHandoverConfig");
         mServiceSub.getHandoverConfig(listener);
     }
 
     @Override
-    protected void onSetHandoverConfig(int hoConfig, IQtiImsExtListener listener) {
+    protected void onSetHandoverConfig(int phoneId, int hoConfig, IQtiImsExtListener listener) {
         mContext.enforceCallingOrSelfPermission(MODIFY_PHONE_STATE, "setHandoverConfig");
         mServiceSub.setHandoverConfig(hoConfig, listener);
     }

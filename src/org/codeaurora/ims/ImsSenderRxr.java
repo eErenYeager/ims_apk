@@ -2917,7 +2917,7 @@ public final class ImsSenderRxr extends ImsPhoneBaseCommands implements ImsPhone
                 imsCode = ImsReasonInfo.CODE_CALL_END_CAUSE_CALL_PULL;
                 break;
             case ImsQmiIF.CALL_FAIL_NORMAL_UNSPECIFIED:
-                imsCode = ImsReasonInfo.CODE_NORMAL_UNSPECIFIED;
+                imsCode = ImsReasonInfo.CODE_UNSPECIFIED;
                 break;
             case ImsQmiIF.CALL_FAIL_SIP_Error:
             case ImsQmiIF.CALL_FAIL_UNOBTAINABLE_NUMBER:

@@ -69,6 +69,8 @@ public class ImsSettings extends PreferenceActivity
     private EditTextPreference mDeflectNum = null;
     private SwitchPreference mButtonCsRetry = null;
     private PhoneStateListener mPhoneStateListener = null;
+    int mPhoneId = QtiCallConstants.INVALID_PHONE_ID;
+    private QtiImsExtManager mQtiImsExtManager;
 
     @Override
     public void onResume() {
@@ -152,15 +154,13 @@ public class ImsSettings extends PreferenceActivity
                                                    R.string.qti_ims_call_deflect));
         mDeflectNum.setOnPreferenceChangeListener(this);
 
-        int imsPhoneId = QtiCallConstants.INVALID_PHONE_ID;
-        try {
-            imsPhoneId = QtiImsExtManager.getInstance().getImsPhoneId();
-        } catch (QtiImsException e) {
-            Log.e(TAG, e.toString());
-        }
+        
+            mPhoneId = getIntent().getIntExtra(QtiCallConstants.EXTRA_PHONE_ID,
+                QtiCallConstants.INVALID_PHONE_ID);
+            Log.d(TAG, "ImsSetting mPhoneId = " + mPhoneId);
 
-        if (imsPhoneId != QtiCallConstants.INVALID_PHONE_ID) {
-            int[] subId = SubscriptionManager.getSubId(imsPhoneId);
+        if (mPhoneId != QtiCallConstants.INVALID_PHONE_ID) {
+            int[] subId = SubscriptionManager.getSubId(mPhoneId);
             if (subId != null && subId.length > 0) {
                 mPhoneStateListener = getPhoneStateListener(subId[0]);
             }
@@ -180,7 +180,7 @@ public class ImsSettings extends PreferenceActivity
         mButtonCsRetry.setOnPreferenceChangeListener(null);
 
         //Enable CS Retry settings depending on CS Retry Config
-        if (QtiImsExtUtils.isCsRetryConfigEnabled(getApplicationContext())) {
+        if (QtiImsExtUtils.isCsRetryConfigEnabled(mPhoneId, getApplicationContext())) {
             mScreen.addPreference(mButtonCsRetry);
             mButtonCsRetry.setOnPreferenceChangeListener(this);
             mButtonCsRetry.setChecked(QtiCallUtils.isCsRetryEnabledByUser(
@@ -199,7 +199,7 @@ public class ImsSettings extends PreferenceActivity
         mStaticImagePreference.setOnPreferenceClickListener(null);
 
         //Enable static image options if static image config is enabled
-        if (QtiImsExtUtils.shallTransmitStaticImage(getApplicationContext())) {
+        if (QtiImsExtUtils.shallTransmitStaticImage(mPhoneId, getApplicationContext())) {
             mScreen.addPreference(mStaticImagePreference);
             mStaticImagePreference.setOnPreferenceClickListener(prefClickListener);
         }
@@ -249,8 +249,8 @@ public class ImsSettings extends PreferenceActivity
     private QtiImsExtListenerBaseImpl QtiImsExtListener =
             new QtiImsExtListenerBaseImpl() {
 
-        @Override
-        public void onGetPacketCount(int status, long packetCount) {
+        
+        public void onGetPacketCount(int phoneId, int status, long packetCount) {
             mPcPreference.setEnabled(true);
             String sPc = getApplicationContext().getResources().getString(
                     R.string.ims_get_packet_count_failed);
@@ -264,8 +264,8 @@ public class ImsSettings extends PreferenceActivity
             displayToast(sPc);
         }
 
-        @Override
-        public void onGetPacketErrorCount(int status, long packetErrorCount) {
+        
+        public void onGetPacketErrorCount(int phoneId, int status, long packetErrorCount) {
             mPerPreference.setEnabled(true);
             String sPec = getApplicationContext().getResources().getString(
                     R.string.ims_get_packet_error_count_failed);
@@ -284,10 +284,10 @@ public class ImsSettings extends PreferenceActivity
         Log.d(TAG, "onPcPrefClicked");
 
         try {
-            QtiImsExtManager.getInstance().getPacketCount(QtiImsExtListener);
+            /* mQtiImsExtManager.getPacketCount(mPhoneId, QtiImsExtListener); */
             mPcPreference.setEnabled(false);
-        } catch (QtiImsException e) {
-            Log.e(TAG, "getPacketCount failed. Exception = " + e);
+        } catch (NullPointerException e) {
+            Log.e(TAG, "getPacketCount failed");
         }
     }
 
@@ -295,10 +295,10 @@ public class ImsSettings extends PreferenceActivity
         Log.d(TAG, "onPerPrefClicked");
 
         try {
-            QtiImsExtManager.getInstance().getPacketErrorCount(QtiImsExtListener);
+            /* mQtiImsExtManager.getPacketErrorCount(mPhoneId, QtiImsExtListener); */
             mPerPreference.setEnabled(false);
-        } catch (QtiImsException e) {
-            Log.e(TAG, "getPacketErrorCount failed. Exception = " + e);
+        } catch (NullPointerException e) {
+            Log.e(TAG, "getPacketErrorCount failed");
         }
     }
 

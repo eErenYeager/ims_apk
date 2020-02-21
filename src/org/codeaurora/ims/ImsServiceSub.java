@@ -721,8 +721,7 @@ public class ImsServiceSub {
             Log.i (this, "sendCallDeflectRequest: no call is available to deflect");
             if (listener != null) {
                 try {
-                    listener.receiveCallDeflectResponse(
-                            QtiImsExtUtils.QTI_IMS_REQUEST_ERROR);
+                    
                 } catch (Throwable t) {
                     Log.e(this, "sendCallDeflectRequest exception!");
                 }
@@ -845,7 +844,7 @@ public class ImsServiceSub {
             Log.e(this, "sendCallTransferRequest: Type " + type + " Failed");
             if (listener != null) {
                 try {
-                    listener.receiveCallTransferResponse(
+                    listener.receiveCallTransferResponse(mPhoneId, 
                             QtiImsExtUtils.QTI_IMS_REQUEST_ERROR);
                 } catch (Throwable t) {
                     Log.e(this, "sendCallTransferRequest: exception!");
@@ -1535,7 +1534,7 @@ public class ImsServiceSub {
             try {
                 int status = getOperationStatus(ar.exception == null);
                 long result = ar.result == null ? 0 : (long)ar.result;
-                listener.onGetPacketCount(status, result);
+                listener.onGetPacketCount(mPhoneId, status, result);
             } catch (Throwable t) {
                 Log.e(this, "onGetPacketCountDone " + t);
             }
@@ -1549,7 +1548,7 @@ public class ImsServiceSub {
             try {
                 int status = getOperationStatus(ar.exception == null);
                 long result = ar.result == null ? 0 : (long)ar.result;
-                listener.onGetPacketErrorCount(status, result);
+                listener.onGetPacketErrorCount(mPhoneId, status, result);
             } catch (Throwable t) {
                 Log.e(this, "onGetPacketErrorCountDone " + t);
             }
@@ -1572,7 +1571,7 @@ public class ImsServiceSub {
                     Log.e(this, "onSetCallForwardTimerDone Failure cause: " +
                             response.hasFailureCause());
                     try {
-                        listener.onUTReqFailed(ImsReasonInfo.CODE_UT_NETWORK_ERROR,
+                        listener.onUTReqFailed(mPhoneId, ImsReasonInfo.CODE_UT_NETWORK_ERROR,
                                 response.getFailureCause());
                     } catch (Throwable t) {
                         Log.e(this, "onUTReqFailed exception!" +t);
@@ -1583,14 +1582,14 @@ public class ImsServiceSub {
             if (ar.exception != null) {
                 Log.e(this, "set CF Timer error!");
                 try {
-                    listener.onUTReqFailed(ImsReasonInfo.CODE_UNSPECIFIED, null);
+                    listener.onUTReqFailed(mPhoneId, ImsReasonInfo.CODE_UNSPECIFIED, null);
                 } catch (Throwable t) {
                     Log.e(this, "onUTReqFailed exception!" +t);
                 }
             } else {
                 Log.e(this, "set CF Timer success!");
                 try {
-                    listener.onSetCallForwardUncondTimer(status);
+                    listener.onSetCallForwardUncondTimer(mPhoneId, status);
                 } catch (Throwable t) {
                     Log.e(this, "onSetCallForwardTimerDone exception!" +t);
                 }
@@ -1611,7 +1610,7 @@ public class ImsServiceSub {
         if (ar.exception != null) {
             Log.e(this, "get CF Timer error!");
             try {
-                listener.onUTReqFailed(ImsReasonInfo.CODE_UNSPECIFIED, null);
+                listener.onUTReqFailed(mPhoneId, ImsReasonInfo.CODE_UNSPECIFIED, null);
             } catch (Throwable t) {
                 Log.e(this, "onUTReqFailed exception!" +t);
             }
@@ -1646,14 +1645,14 @@ public class ImsServiceSub {
         if (listener !=null) {
             if (reason == CF_REASON_UNCONDITIONAL) {
                 try {
-                    listener.onGetCallForwardUncondTimer(startHour, endHour, startMinute,
+                    listener.onGetCallForwardUncondTimer(mPhoneId, startHour, endHour, startMinute,
                             endMinute, reason, status, number, serviceClass);
                 } catch (Throwable t) {
                     Log.e(this, "onGetCallForwardTimerDone exception!");
                 }
             } else {
                 try {
-                    listener.onUTReqFailed(ImsReasonInfo.CODE_UT_NETWORK_ERROR, null);
+                    listener.onUTReqFailed(mPhoneId, ImsReasonInfo.CODE_UT_NETWORK_ERROR, null);
                 } catch (Throwable t) {
                     Log.e(this, "onUTReqFailed exception!"+t);
                 }
@@ -1675,7 +1674,7 @@ public class ImsServiceSub {
         /* If listener is available, notify the result */
         if (listener != null) {
             try {
-                listener.receiveCallDeflectResponse(nStatus);
+                
             } catch (Throwable t) {
                 Log.e(this, "handleCallDeflectResponse exception!");
             }
@@ -1771,7 +1770,7 @@ public class ImsServiceSub {
         /* If listener is available, notify the result */
         if (listener != null) {
             try {
-                listener.receiveCallTransferResponse(nStatus);
+                listener.receiveCallTransferResponse(mPhoneId, nStatus);
             } catch (Throwable t) {
                 Log.e(this, "handleCallTransferResponse exception!");
             }
@@ -1900,7 +1899,7 @@ public class ImsServiceSub {
 
         if (listener != null) {
             try {
-                listener.notifyRefreshViceInfo(new QtiViceInfo(dialogIds));
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -1920,7 +1919,7 @@ public class ImsServiceSub {
         if (dialogIds != null) {
             for(IQtiImsExtListener listener : listeners) {
                 try {
-                    listener.notifyRefreshViceInfo(new QtiViceInfo(dialogIds));
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -2012,7 +2011,7 @@ public class ImsServiceSub {
 
             if (listener != null) {
                 try {
-                    listener.notifyVopsStatus(mIsVopsEnabled);
+                    listener.notifyVopsStatus(mPhoneId, mIsVopsEnabled);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -2031,7 +2030,7 @@ public class ImsServiceSub {
 
             if (listener != null) {
                 try {
-                    listener.notifySsacStatus(mIsSsacVoiceBarred);
+                    listener.notifySsacStatus(mPhoneId, mIsSsacVoiceBarred);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -2062,7 +2061,7 @@ public class ImsServiceSub {
                    + participantInfo.getParticipantUri() + " ect = " + participantInfo.getIsEct());
             for (IQtiImsExtListener listener : mQtiImsParticipantStatusListeners) {
                 try {
-                    listener.notifyParticipantStatusInfo(
+                    listener.notifyParticipantStatusInfo(mPhoneId, 
                             participantInfo.getOperation(), participantInfo.getSipStatus(),
                             participantInfo.getParticipantUri(), participantInfo.getIsEct());
                 } catch (Exception e) {
@@ -2129,7 +2128,7 @@ public class ImsServiceSub {
         /* If listener is available, notify the result */
         if (listener != null) {
             try {
-                listener.onVoltePreferenceUpdated(result);
+                listener.onVoltePreferenceUpdated(mPhoneId, result);
             } catch (Throwable t) {
                 Log.e(this, "handleUpdateVoltePrefResponse exception!");
             }
@@ -2152,7 +2151,7 @@ public class ImsServiceSub {
         /* If listener is available, notify the result */
         if (listener != null) {
             try {
-                listener.onVoltePreferenceQueried(result, preference);
+                listener.onVoltePreferenceQueried(mPhoneId, result, preference);
             } catch (Throwable t) {
                 Log.e(this, "handleQueryVoltePrefResponse exception!");
             }
@@ -2168,7 +2167,7 @@ public class ImsServiceSub {
                 int result = ar.result == null ?
                              QtiImsExtUtils.QTI_IMS_HO_INVALID :
                              (int)ar.result;
-                listener.onGetHandoverConfig(status, result);
+                listener.onGetHandoverConfig(mPhoneId, status, result);
             } catch (Throwable t) {
                 Log.e(this, "onGetHandoverConfigDone " + t);
             }
@@ -2181,7 +2180,7 @@ public class ImsServiceSub {
         if (listener != null) {
             try {
                 int status = getOperationStatus(ar.exception == null);
-                listener.onSetHandoverConfig(status);
+                listener.onSetHandoverConfig(mPhoneId, status);
             } catch (Throwable t) {
                 Log.e(this, "onSetHandoverConfigDone " + t);
             }

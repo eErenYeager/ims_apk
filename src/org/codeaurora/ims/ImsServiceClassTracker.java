@@ -88,9 +88,11 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
      * Internal use only.
      * @hide
      */
-    public static final String EXTRA_USSD = "android:ussd";
 
     public static final String CONF_URI_DC_NUMBER = "Conference Call";
+    
+    /* Call deflect setting name */
+    public static final String QTI_IMS_DEFLECT_ENABLED = "qti.ims.call_deflect";
 
     //Constructor
     public ImsServiceClassTracker(int serviceClass, PendingIntent intent,
@@ -502,7 +504,7 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
             final int value = (turnOn) ? 1:0;
             android.provider.Settings.Global.putInt(
                       mContext.getContentResolver(),
-                      QtiImsExtUtils.QTI_IMS_DEFLECT_ENABLED, value);
+                      QTI_IMS_DEFLECT_ENABLED, value);
         }
     }
 
@@ -612,18 +614,20 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
                     callSession = mCallList.get(Integer.toString(info.getConnId()));
             if (callSession != null) {
                 boolean startOnHoldLocalTone = false;
-                ImsSuppServiceNotification suppServiceInfo = new ImsSuppServiceNotification();
-                suppServiceInfo.notificationType = info.getNotificationType();
-                suppServiceInfo.code = info.getCode();
-                suppServiceInfo.index = info.getIndex();
-                suppServiceInfo.number = info.getNumber();
+                int notificationType = info.getNotificationType();
+                int code = info.getCode();
+                int index = info.getIndex();
+                String number = info.getNumber();
+                int type = info.getType();
+                String[] history = null;
                 final String forwardedCallHistory = info.getHistoryInfo();
                 if (forwardedCallHistory != null && !forwardedCallHistory.isEmpty() ) {
-                    suppServiceInfo.history = forwardedCallHistory.split("\r\n");
+                    history = forwardedCallHistory.split("\r\n");
                 }
                 if (info.hasHoldTone()) {
                     startOnHoldLocalTone = info.getHoldTone();
                 }
+                ImsSuppServiceNotification suppServiceInfo = new ImsSuppServiceNotification(notificationType, code, index, type, number,                                                                                               history);
                 Log.i(this, "handleSuppSvcUnsol suppNotification= " + suppServiceInfo +
                       " startOnHoldLocalTone = " + startOnHoldLocalTone);
                 callSession.updateSuppServiceInfo(suppServiceInfo, startOnHoldLocalTone);

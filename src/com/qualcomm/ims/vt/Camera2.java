@@ -502,7 +502,7 @@ class Camera2 extends Camera {
     /**
      * {@link CameraDevice.StateListener} is called when {@link CameraDevice} changes its status.
      */
-    private CameraDevice.StateListener mStateListener = new CameraDevice.StateListener() {
+    private CameraDevice.StateCallback mStateListener = new CameraDevice.StateCallback() {
 
         @Override
         public void onOpened(CameraDevice cameraDevice) {
@@ -750,7 +750,7 @@ class Camera2 extends Camera {
     }
 
     private void doCreateCaptureSession(List<OutputConfiguration> o,
-            CameraCaptureSession.StateListener l) throws CameraAccessException {
+            CameraCaptureSession.StateCallback l) throws CameraAccessException {
         if (mIsCreateSessionPending) {
             throw new CameraAccessException(CameraAccessException.CAMERA_ERROR,
                     "Only one session request is allowed.");
@@ -768,7 +768,7 @@ class Camera2 extends Camera {
         return mOpenState == CAMERA_STATE_OPEN;
     }
 
-    private class CaptureSessionListener extends CameraCaptureSession.StateListener {
+    private class CaptureSessionListener extends CameraCaptureSession.StateCallback {
         private int id;
 
         public CaptureSessionListener(int v) {
