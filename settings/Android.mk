@@ -11,7 +11,7 @@ LOCAL_PACKAGE_NAME := imssettings
 LOCAL_CERTIFICATE := platform
 LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_MODULE_OWNER := qti
-
+LOCAL_DEX_PREOPT := false
 LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)

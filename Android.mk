@@ -6,7 +6,6 @@
 src_java_ims := src/org/codeaurora/ims
 src_java_ims += src/com/qualcomm/ims/vt
 src_java_ims += src/com/qualcomm/ims/utils
-src_java_ims += src/com/qualcomm/qti/ims/vzw
 src_proto := src
 
 LOCAL_PATH:= $(call my-dir)
@@ -21,9 +20,9 @@ LOCAL_PACKAGE_NAME := ims
 LOCAL_CERTIFICATE := platform
 LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_MODULE_OWNER := qti
-LOCAL_JAVA_LIBRARIES := telephony-common ims-common voip-common qti-vzw-ims-internal
+LOCAL_JAVA_LIBRARIES := telephony-common ims-common voip-common
 LOCAL_STATIC_JAVA_LIBRARIES := ims-ext-common
-
+LOCAL_DEX_PREOPT := false
 LOCAL_JNI_SHARED_LIBRARIES := libimsmedia_jni libimscamera_jni
 LOCAL_REQUIRED_MODULES := libimsmedia_jni libimscamera_jni
 

@@ -21,8 +21,9 @@ LOCAL_SHARED_LIBRARIES := \
     libbinder \
 
 
-LOCAL_CFLAGS += -O0 -g
+LOCAL_CFLAGS += -O0 -g -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
+LOCAL_LDLIBS := -llog
 
 LOCAL_MODULE := libimsmedia_jni
 LOCAL_MODULE_OWNER := qti
