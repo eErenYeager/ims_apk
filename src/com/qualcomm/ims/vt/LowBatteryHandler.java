@@ -40,10 +40,12 @@ public class LowBatteryHandler implements ICallListListener {
     private ImsServiceSub mServiceSub;
     private boolean mIsLowBattery = false;
     private final boolean isCarrierOneSupported = ImsCallUtils.isCarrierOneSupported();
+    private int mPhoneId = -1;
 
     private LowBatteryHandler(ImsServiceSub serviceSub, Context context) {
         mContext = context;
         mServiceSub = serviceSub;
+        mPhoneId = mServiceSub.getImsPhoneId();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_BATTERY_CHANGED);
         mContext.registerReceiver(mBatteryLevel, filter);
@@ -92,9 +94,10 @@ public class LowBatteryHandler implements ICallListListener {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
+
             if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
                 boolean allowVideoCallsInLowBattery = QtiImsExtUtils.
-                        allowVideoCallsInLowBattery(mContext);
+                        allowVideoCallsInLowBattery(mPhoneId, mContext);
                 mIsLowBattery = isLowBattery(intent);
                 if (mIsLowBattery && !allowVideoCallsInLowBattery) {
                     // Disconnect video calls only for SKT.
@@ -157,7 +160,7 @@ public class LowBatteryHandler implements ICallListListener {
      *                  false if device battery status is OK
      */
     public boolean isLowBattery() {
-        if (isCarrierOneSupported || !(QtiImsExtUtils.allowVideoCallsInLowBattery(mContext))) {
+        if (isCarrierOneSupported || !(QtiImsExtUtils.allowVideoCallsInLowBattery(mPhoneId, mContext))) {
             return mIsLowBattery;
         }
         return false;

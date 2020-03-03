@@ -59,6 +59,7 @@ import android.telephony.ims.compat.feature.ImsFeature;
 import android.telephony.ims.stub.ImsEcbmImplBase;
 import android.telephony.ims.stub.ImsMultiEndpointImplBase;
 import android.telephony.ims.stub.ImsUtImplBase;
+import org.codeaurora.ims.utils.QtiCarrierConfigHelper;
 
 public class ImsService extends android.telephony.ims.compat.ImsService {
     private static final int MAX_SUBSCRIPTIONS = 1;
@@ -108,6 +109,7 @@ public class ImsService extends android.telephony.ims.compat.ImsService {
     public void onCreate() {
         super.onCreate();
         Log.i (this, "ImsService created!");
+        QtiCarrierConfigHelper.getInstance().setup(this);
         mServiceSub = new ImsServiceSub[getNumSubscriptions()];
         for (int i = 0; i < getNumSubscriptions(); i++) {
             mServiceSub[i] = new ImsServiceSub(i + 1, this);
@@ -157,6 +159,7 @@ public class ImsService extends android.telephony.ims.compat.ImsService {
         for (int i = 0; i < getNumSubscriptions(); i++) {
             mServiceSub[i].dispose();
         }
+        QtiCarrierConfigHelper.getInstance().teardown();
         super.onDestroy();
     }
 

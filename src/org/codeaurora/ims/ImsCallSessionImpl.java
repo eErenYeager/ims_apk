@@ -126,6 +126,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
     private ConfInfo mConfInfo = null;
     private ImsConferenceState mImsConferenceState = null;
     private boolean mRingbackToneRequest = false;
+    private int mPhoneId = -1;
 
     private ImsCallModification mImsCallModification;
     ImsVideoCallProviderImpl mImsVideoCallProviderImpl;
@@ -171,7 +172,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
             Preconditions.checkState(mImsCallModification == null);
 
             Log.i(this, "maybeCreateVideoProvider: Creating VideoCallProvider");
-            mImsCallModification = new ImsCallModification(this, mContext, mCi);
+            mImsCallModification = new ImsCallModification(this, mContext, mCi, mPhoneId);
             mImsVideoCallProviderImpl = new ImsVideoCallProviderImpl(this, mImsCallModification);
             addListener(mImsVideoCallProviderImpl);
         }
@@ -181,7 +182,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
         //Contructor for MO Call
     public ImsCallSessionImpl(ImsCallProfile profile, IImsCallSessionListener listener,
             ImsSenderRxr senderRxr, Context context, ImsServiceClassTracker tracker,
-                              boolean isVideoCapable) {
+                              boolean isVideoCapable, int PhoneId) {
         this(context, senderRxr, tracker, isVideoCapable);
 
         setListener(listener);
@@ -189,11 +190,12 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
         mCallProfile = profile;
         mConfInfo = new ConfInfo();
         mCi.registerForRingbackTone(mHandler, EVENT_RINGBACK_TONE, null);
+        mPhoneId = PhoneId;
     }
 
     // Constructor for MT call and Conference Call
     public ImsCallSessionImpl(DriverCallIms call, ImsSenderRxr senderRxr, Context context,
-            ImsServiceClassTracker tracker, boolean isVideoCapable) {
+            ImsServiceClassTracker tracker, boolean isVideoCapable, int PhoneId) {
         this(context, senderRxr, tracker, isVideoCapable);
 
         //TODO update member variables in this class based on dc
@@ -203,7 +205,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
 
         updateImsCallProfile(mDc);
         setCapabilitiesInProfiles(mDc);
-
+        mPhoneId = PhoneId;
         mConfInfo = new ConfInfo();
     }
 
@@ -492,7 +494,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
                 mState = ImsCallSession.State.TERMINATED;
                 //Propagate error code through extras to UI
                 final int errorCode = (mIsCallTerminatedDueToLowBattery &&
-                        !QtiImsExtUtils.allowVideoCallsInLowBattery(mContext)) ?
+                        !QtiImsExtUtils.allowVideoCallsInLowBattery(mPhoneId, mContext)) ?
                         QtiCallConstants.CALL_FAIL_EXTRA_CODE_LOCAL_LOW_BATTERY :
                         dcUpdate.callFailCause.mCode;
                 mCallProfile.setCallExtraInt(QtiCallConstants.EXTRAS_KEY_CALL_FAIL_EXTRA_CODE,
@@ -629,8 +631,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
                 dcUpdate.callDetails.localAbility);
         boolean isLocalVoiceServiceAllowed = isServiceAllowed(CallDetails.CALL_TYPE_VOICE,
                 dcUpdate.callDetails.localAbility);
-
-        if (QtiImsExtUtils.shallRemoveModifyCallCapability(mContext) &&
+        if (QtiImsExtUtils.shallRemoveModifyCallCapability(mPhoneId, mContext) &&
                 (dcUpdate.state == DriverCallIms.State.HOLDING)) {
             /*
              * Remove local Voice/VT capabilities to ensure that "modify call"
@@ -660,7 +661,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
         boolean isRemoteVoiceServiceAllowed = isServiceAllowed(CallDetails.CALL_TYPE_VOICE,
                 dcUpdate.callDetails.peerAbility);
 
-        if (QtiImsExtUtils.shallRemoveModifyCallCapability(mContext) &&
+        if (QtiImsExtUtils.shallRemoveModifyCallCapability(mPhoneId, mContext) &&
                 (getMtSuppSvcCode() == SUPP_SVC_CODE_MT_HOLD)) {
             isRemoteVoiceServiceAllowed = isRemoteVideoServiceAllowed = false;
         }
@@ -726,7 +727,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
                     }
                     mListenerProxy.callSessionHoldReceived((IImsCallSession) this, mCallProfile);
 
-                    if (QtiImsExtUtils.shallRemoveModifyCallCapability(mContext) &&
+                    if (QtiImsExtUtils.shallRemoveModifyCallCapability(mPhoneId, mContext) &&
                             mRemoteCallProfile.mCallType != ImsCallProfile.CALL_TYPE_VT_NODIR) {
                        /*
                         * Remove peer Voice/VT capabilities to ensure that "modify call"
@@ -746,7 +747,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
                     }
                     mListenerProxy.callSessionResumeReceived((IImsCallSession) this, mCallProfile);
 
-                    if (QtiImsExtUtils.shallRemoveModifyCallCapability(mContext) &&
+                    if (QtiImsExtUtils.shallRemoveModifyCallCapability(mPhoneId, mContext) &&
                         mRemoteCallProfile.mCallType == ImsCallProfile.CALL_TYPE_VT_NODIR) {
                         //Restore the original remote capabilities
                         setRemoteProfileCallType(mDc);
@@ -1921,7 +1922,7 @@ public class ImsCallSessionImpl extends ImsCallSessionImplBase {
            to lower layers. Also call end reason to apps need to be reported as low battery */
         mIsCallTerminatedDueToLowBattery = isLowBatteryVideoCall();
         if (mIsCallTerminatedDueToLowBattery &&
-                !QtiImsExtUtils.allowVideoCallsInLowBattery(mContext)) {
+                !QtiImsExtUtils.allowVideoCallsInLowBattery(mPhoneId, mContext)) {
             reason = ImsReasonInfo.CODE_LOW_BATTERY;
         }
 

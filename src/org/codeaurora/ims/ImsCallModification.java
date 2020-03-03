@@ -54,6 +54,7 @@ public class ImsCallModification {
     static final int EVENT_VIDEO_PAUSE_DONE = 7;
     static final int EVENT_MODIFY_CALL_CONFIRM_DONE = 8;
     static final int EVENT_VIDEO_PAUSE_RETRY = 9;
+    private int mPhoneId = -1;
 
     private int mMultiTaskRetryCount = 0;
     private static final int MAX_MULTITASK_RETRIES = 1;
@@ -77,13 +78,14 @@ public class ImsCallModification {
     }
 
     public ImsCallModification(ImsCallSessionImpl imsCallSessionImpl, Context context,
-            ImsSenderRxr senderRxr) {
+            ImsSenderRxr senderRxr, int PhoneId) {
         Log.v(this, "ImsCallModification instance created imsCallSessionImpl=" +
                 imsCallSessionImpl);
         mCi = senderRxr;
         mContext = context;
         mImsCallSessionImpl = imsCallSessionImpl;
         mHandler = new ImsCallModificationHandler();
+        mPhoneId = PhoneId;
     }
 
     private boolean isVTMultitaskRequest(int callType) {
@@ -176,14 +178,13 @@ public class ImsCallModification {
 
     private boolean validateIncomingModifyConnectionType(int newCallType) {
         Log.i(this, "validateIncomingModifyConnectionType newCallType = " + newCallType);
-
         final boolean modifyToCurrCallType = areCallTypesSame(newCallType);
         final boolean isIndexValid = isIndexValid();
         // For RJIL, incoming modify requests should be allowed under low battery scenarios
         boolean isLowBattery = false;
         /* For SKT operator, Do not honour upgrade requests received
            when UE is under low battery */
-        if (!QtiImsExtUtils.allowVideoCallsInLowBattery(mContext)) {
+        if (!QtiImsExtUtils.allowVideoCallsInLowBattery(mPhoneId, mContext)) {
             isLowBattery = LowBatteryHandler.getInstance().isLowBattery();
         }
 

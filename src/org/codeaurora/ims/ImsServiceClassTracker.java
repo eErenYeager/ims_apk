@@ -54,6 +54,7 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
     private static int currentMaxServiceId = 0;
     private ImsSenderRxr mCi = null;
     private Context mContext;
+    private int mPhoneId = -1;
 
     private boolean mIsVideoSupported = false;
     private boolean mIsVoiceSupported = false;
@@ -106,6 +107,7 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
         mPendingSessionList = new ArrayList<ImsCallSessionImpl>();
         mCallListListeners = new CopyOnWriteArrayList<>();
         mServiceSub = serviceSub;
+        mPhoneId = mServiceSub.getImsPhoneId();
     }
 
     private static class HandoverInfo {
@@ -426,7 +428,7 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
                     //just ignore this dc and continue with the dc list
                     continue;
                 }
-                callSession = new ImsCallSessionImpl(dc, mCi, mContext, this, mIsVideoSupported);
+                callSession = new ImsCallSessionImpl(dc, mCi, mContext, this, mIsVideoSupported, mPhoneId);
                 callSession.addListener(this);
                 callSession.updateFeatureCapabilities(mIsVideoSupported, mIsVoiceSupported);
                 if (dc.isMT) {
@@ -577,7 +579,7 @@ public class ImsServiceClassTracker implements ImsCallSessionImpl.Listener{
     public ImsCallSessionImpl createCallSession(ImsCallProfile profile,
             IImsCallSessionListener listener) {
         ImsCallSessionImpl session = new ImsCallSessionImpl(profile, listener, mCi, mContext,
-                this, mIsVideoSupported);
+                this, mIsVideoSupported, mPhoneId);
         session.addListener(this);
         session.updateFeatureCapabilities(mIsVideoSupported, mIsVoiceSupported);
         synchronized(mPendingSessionList) {
