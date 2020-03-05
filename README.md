@@ -14,7 +14,7 @@ This ims source is based on xyz qcom nougat bsp leak, modified by @eErenYeager (
 - Devs (like me) try to decompile ims apk, edit smali paths according to pie changes, recompile and then try again, but still crashes
 - Devs of newer soc's kang pie ims blobs from other devices, succesfully, fixing volte once and for all
 - Devs of older soc's (like me) try to kang oreo blobs too, but unsuccesful because they don't support old modem (MPSS.DPM.1.x)
-- Mohd Faraz (@AndroiableDroid), LYF Water 7 (msm8939 device) dev succesfully fix volte using msm8952 oreo and pie blobs, hats off!
+- Mohd Faraz (@AndroiableDroid), LYF Water 8 (msm8939 device) dev succesfully fix volte using msm8952 oreo and pie blobs, hats off!
 - We YU and redmi 2 devs trying again, failing, crying in a corner, with users still using oreo roms just for VoL!T
 - Android 10 releases and I (ghostrider-reborn) booted it on A6020 - Lenovo Vibe K5 (msm8916 device); VoLTE is forgotten as its hopeless
 - Months later, out of nowhere, pro god Abhishek (@eErenYeager) suddenly releases LineageOS 16.0 with VoLTE for YU Yureka (another sad legacy device)
@@ -24,5 +24,5 @@ This ims source is based on xyz qcom nougat bsp leak, modified by @eErenYeager (
 - Later he made few more changes, now volte works in both sims (one at a time)
 
 **TODO:**
-- Fix VoLTE and WFC
+- Fix ViLTE and WFC
 
