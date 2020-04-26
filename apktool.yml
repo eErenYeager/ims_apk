@@ -1,0 +1,20 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: ims.apk
+compressionType: false
+doNotCompress: null
+isFrameworkApk: false
+packageInfo: null
+sdkInfo:
+  minSdkVersion: '10'
+  targetSdkVersion: '25'
+sharedLibrary: false
+sparseResources: false
+unknownFiles: {}
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.4.1
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'

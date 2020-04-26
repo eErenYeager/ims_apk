@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.phone" android:versionCode="1" android:versionName="1.0" package="org.codeaurora.ims" platformBuildVersionCode="25" platformBuildVersionName="7.1.1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <permission android:name="com.qti.permission.DIAG" android:protectionLevel="signatureOrSystem" />
+    <permission android:name="org.codeaurora.permission.ACCESS_CSVT_SERVICE" android:protectionLevel="signatureOrSystem" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.qti.permission.DIAG" />
+    <application android:directBootAware="true">
+        <receiver android:name="ImsServiceAutoboot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".ImsService" android:persistent="true" android:enabled="true" android:exported="true" android:process="com.android.phone" />
+    </application>
+    <application android:persistent="true">
+        <service android:name="com.qualcomm.ims.csvt.CsvtService" android:permission="org.codeaurora.permission.ACCESS_CSVT_SERVICE" android:enabled="true" android:exported="true" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="org.codeaurora.ims.csvt.ICsvtService" />
+            </intent-filter>
+        </service>
+        <uses-library android:name="org.codeaurora.imslibrary" />
+    </application>
+</manifest>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_45-internal (Oracle Corporation)
+
+Name: AndroidManifest.xml
+SHA1-Digest: TjgSagkW9uDmnkf96ZEiK359zH8=
+
