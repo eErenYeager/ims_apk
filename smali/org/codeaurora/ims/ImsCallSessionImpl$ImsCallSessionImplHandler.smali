@@ -127,16 +127,16 @@
     check-cast v1, Lcom/android/ims/internal/IImsCallSession;
 
     .line 602
-    new-instance v3, Lcom/android/ims/ImsReasonInfo;
+    new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 603
     const-string/jumbo v4, "Dial Failed"
 
     .line 602
-    invoke-direct {v3, v5, v5, v4}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v3, v5, v5, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     .line 601
-    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionStartFailed(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsReasonInfo;)V
+    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionStartFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
 
     goto :goto_0
 
@@ -276,16 +276,16 @@
     check-cast v1, Lcom/android/ims/internal/IImsCallSession;
 
     .line 632
-    new-instance v3, Lcom/android/ims/ImsReasonInfo;
+    new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 633
     const-string/jumbo v4, "Hold Failed"
 
     .line 632
-    invoke-direct {v3, v5, v5, v4}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v3, v5, v5, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     .line 631
-    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionHoldFailed(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsReasonInfo;)V
+    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionHoldFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
 
     goto/16 :goto_0
 
@@ -326,16 +326,16 @@
     check-cast v1, Lcom/android/ims/internal/IImsCallSession;
 
     .line 644
-    new-instance v3, Lcom/android/ims/ImsReasonInfo;
+    new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 645
     const-string/jumbo v4, "Resume Failed"
 
     .line 644
-    invoke-direct {v3, v5, v5, v4}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v3, v5, v5, v4}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     .line 643
-    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionResumeFailed(Lcom/android/ims/internal/IImsCallSession;Lcom/android/ims/ImsReasonInfo;)V
+    invoke-virtual {v2, v1, v3}, Lorg/codeaurora/ims/ImsCallSessionListenerProxy;->callSessionResumeFailed(Lcom/android/ims/internal/IImsCallSession;Landroid/telephony/ims/ImsReasonInfo;)V
 
     goto/16 :goto_0
 

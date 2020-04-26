@@ -70,17 +70,17 @@
     return-void
 .end method
 
-.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILcom/android/ims/ImsReasonInfo;)V
+.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 3
     .param p1, "listener"    # Lcom/android/ims/internal/IImsRegistrationListener;
     .param p2, "registrationState"    # I
-    .param p3, "imsReasonInfo"    # Lcom/android/ims/ImsReasonInfo;
+    .param p3, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 605
     new-instance v0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;
 
-    invoke-direct {v0, p0, p2, p1, p3}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Lcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p2, p1, p3}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;)V
 
     .line 625
     .local v0, "r":Ljava/lang/Runnable;
@@ -168,16 +168,16 @@
     .line 848
     .local v5, "regState":I
     :goto_2
-    new-instance v2, Lcom/android/ims/ImsReasonInfo;
+    new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 849
     const/16 v7, 0x3e8
 
     .line 848
-    invoke-direct {v2, v7, v0, v1}, Lcom/android/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
+    invoke-direct {v2, v7, v0, v1}, Landroid/telephony/ims/ImsReasonInfo;-><init>(IILjava/lang/String;)V
 
     .line 851
-    .local v2, "imsReasonInfo":Lcom/android/ims/ImsReasonInfo;
+    .local v2, "imsReasonInfo":Landroid/telephony/ims/ImsReasonInfo;
     iget-object v7, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v7}, Lorg/codeaurora/ims/ImsServiceSub;->-get1(Lorg/codeaurora/ims/ImsServiceSub;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -204,13 +204,13 @@
 
     .line 852
     .local v3, "regListener":Lcom/android/ims/internal/IImsRegistrationListener;
-    invoke-direct {p0, v3, v5, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {p0, v3, v5, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     goto :goto_3
 
     .line 843
     .end local v0    # "errorCode":I
-    .end local v2    # "imsReasonInfo":Lcom/android/ims/ImsReasonInfo;
+    .end local v2    # "imsReasonInfo":Landroid/telephony/ims/ImsReasonInfo;
     .end local v3    # "regListener":Lcom/android/ims/internal/IImsRegistrationListener;
     .end local v4    # "regListener$iterator":Ljava/util/Iterator;
     .end local v5    # "regState":I
