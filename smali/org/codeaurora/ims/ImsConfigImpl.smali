@@ -3758,14 +3758,14 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 285
-    new-instance v3, Ljava/lang/RuntimeException;
+    .line 1064
+    const/4 v3, -0x1
 
-    const-string/jumbo v4, "This method will deadlock if called from the main thread."
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    move-result-object v3
 
-    throw v3
+    return-object v3
 
     .line 287
     :cond_0
