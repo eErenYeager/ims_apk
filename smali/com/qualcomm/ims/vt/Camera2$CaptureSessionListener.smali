@@ -1,5 +1,5 @@
 .class Lcom/qualcomm/ims/vt/Camera2$CaptureSessionListener;
-.super Landroid/hardware/camera2/CameraCaptureSession$StateListener;
+.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 .source "Camera2.java"
 
 
@@ -30,7 +30,7 @@
     .line 678
     iput-object p1, p0, Lcom/qualcomm/ims/vt/Camera2$CaptureSessionListener;->this$0:Lcom/qualcomm/ims/vt/Camera2;
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateListener;-><init>()V
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
 
     .line 679
     iput p2, p0, Lcom/qualcomm/ims/vt/Camera2$CaptureSessionListener;->id:I

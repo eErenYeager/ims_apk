@@ -953,9 +953,9 @@
     return-object v2
 .end method
 
-.method private doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateListener;)V
+.method private doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
     .locals 3
-    .param p2, "l"    # Landroid/hardware/camera2/CameraCaptureSession$StateListener;
+    .param p2, "l"    # Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -963,7 +963,7 @@
             "<",
             "Landroid/hardware/camera2/params/OutputConfiguration;",
             ">;",
-            "Landroid/hardware/camera2/CameraCaptureSession$StateListener;",
+            "Landroid/hardware/camera2/CameraCaptureSession$StateCallback;",
             ")V"
         }
     .end annotation
@@ -1123,7 +1123,7 @@
 
     invoke-direct {v2, p0, v3}, Lcom/qualcomm/ims/vt/Camera2$CaptureSessionListener;-><init>(Lcom/qualcomm/ims/vt/Camera2;I)V
 
-    invoke-direct {p0, v1, v2}, Lcom/qualcomm/ims/vt/Camera2;->doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateListener;)V
+    invoke-direct {p0, v1, v2}, Lcom/qualcomm/ims/vt/Camera2;->doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1322,7 +1322,7 @@
 
     invoke-direct {v3, p0, v4}, Lcom/qualcomm/ims/vt/Camera2$CaptureSessionListener;-><init>(Lcom/qualcomm/ims/vt/Camera2;I)V
 
-    invoke-direct {p0, v2, v3}, Lcom/qualcomm/ims/vt/Camera2;->doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateListener;)V
+    invoke-direct {p0, v2, v3}, Lcom/qualcomm/ims/vt/Camera2;->doCreateCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
