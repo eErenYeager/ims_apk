@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsUtListenerProxy;
-.super Landroid/telephony/ims/stub/ImsUtListenerImplBase;
+.super Lcom/android/ims/internal/IImsUtListener$Stub;
 .source "ImsUtListenerProxy.java"
 
 
@@ -29,7 +29,7 @@
 
     .prologue
     .line 17
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsUtListenerImplBase;-><init>()V
+    invoke-direct {p0}, Lcom/android/ims/internal/IImsUtListener$Stub;-><init>()V
 
     return-void
 .end method

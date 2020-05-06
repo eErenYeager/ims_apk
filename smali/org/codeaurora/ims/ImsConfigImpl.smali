@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsConfigImpl;
-.super Landroid/telephony/ims/stub/ImsConfigImplBase;
+.super Lcom/android/ims/internal/IImsConfig$Stub;
 .source "ImsConfigImpl.java"
 
 
@@ -112,7 +112,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsConfigImplBase;-><init>()V
+    invoke-direct {p0}, Lcom/android/ims/internal/IImsConfig$Stub;-><init>()V
 
     .line 45
     const-string/jumbo v1, "android.permission.MODIFY_PHONE_STATE"

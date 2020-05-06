@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsEcbmImpl;
-.super Landroid/telephony/ims/stub/ImsEcbmImplBase;
+.super Lcom/android/ims/internal/IImsEcbm$Stub;
 .source "ImsEcbmImpl.java"
 
 
@@ -62,7 +62,7 @@
     const/4 v2, 0x0
 
     .line 28
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsEcbmImplBase;-><init>()V
+    invoke-direct {p0}, Lcom/android/ims/internal/IImsEcbm$Stub;-><init>()V
 
     .line 21
     iput v3, p0, Lorg/codeaurora/ims/ImsEcbmImpl;->EVENT_ENTER_EMERGENCY_CALLBACK_MODE:I

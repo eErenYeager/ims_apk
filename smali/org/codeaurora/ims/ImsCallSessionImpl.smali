@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsCallSessionImpl;
-.super Landroid/telephony/ims/stub/ImsCallSessionImplBase;
+.super Landroid/telephony/ims/compat/stub/ImsCallSessionImplBase;
 .source "ImsCallSessionImpl.java"
 
 
@@ -335,7 +335,7 @@
     const/4 v2, 0x0
 
     .line 117
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsCallSessionImplBase;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/ims/compat/stub/ImsCallSessionImplBase;-><init>()V
 
     .line 81
     iput-object v3, p0, Lorg/codeaurora/ims/ImsCallSessionImpl;->mDc:Lorg/codeaurora/ims/DriverCallIms;
@@ -4640,7 +4640,7 @@
 
     .prologue
     .line 1634
-    invoke-super {p0}, Landroid/telephony/ims/stub/ImsCallSessionImplBase;->toString()Ljava/lang/String;
+    invoke-super {p0}, Landroid/telephony/ims/compat/stub/ImsCallSessionImplBase;->toString()Ljava/lang/String;
 
     move-result-object v0
 

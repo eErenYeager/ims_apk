@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsCallSessionListenerProxy;
-.super Landroid/telephony/ims/stub/ImsCallSessionListenerImplBase;
+.super Lcom/android/ims/internal/IImsCallSessionListener$Stub;
 .source "ImsCallSessionListenerProxy.java"
 
 
@@ -43,7 +43,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsCallSessionListenerImplBase;-><init>()V
+    invoke-direct {p0}, Lcom/android/ims/internal/IImsCallSessionListener$Stub;-><init>()V
 
     .line 47
     const-string/jumbo v0, "ImsCallSessionListenerProxy"
@@ -89,7 +89,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Landroid/telephony/ims/stub/ImsCallSessionListenerImplBase;-><init>()V
+    invoke-direct {p0}, Lcom/android/ims/internal/IImsCallSessionListener$Stub;-><init>()V
 
     .line 54
     const-string/jumbo v0, "ImsCallSessionListenerProxy"
