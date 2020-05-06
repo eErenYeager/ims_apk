@@ -93,11 +93,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+.method public utConfigurationCallBarringQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cbInfo"    # [Lcom/android/ims/ImsSsInfo;
+    .param p3, "cbInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
     .prologue
     .line 104
@@ -108,7 +108,7 @@
     .line 105
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$5;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$5;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 115
     .local v0, "r":Ljava/lang/Runnable;
@@ -120,11 +120,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+.method public utConfigurationCallForwardQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cfInfo"    # [Lcom/android/ims/ImsCallForwardInfo;
+    .param p3, "cfInfo"    # [Landroid/telephony/ims/ImsCallForwardInfo;
 
     .prologue
     .line 125
@@ -135,7 +135,7 @@
     .line 126
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$6;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsCallForwardInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$6;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsCallForwardInfo;)V
 
     .line 136
     .local v0, "r":Ljava/lang/Runnable;
@@ -147,11 +147,11 @@
     return-void
 .end method
 
-.method public utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+.method public utConfigurationCallWaitingQueried(Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "cwInfo"    # [Lcom/android/ims/ImsSsInfo;
+    .param p3, "cwInfo"    # [Landroid/telephony/ims/ImsSsInfo;
 
     .prologue
     .line 146
@@ -162,7 +162,7 @@
     .line 147
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$7;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Lcom/android/ims/ImsSsInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$7;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;I[Landroid/telephony/ims/ImsSsInfo;)V
 
     .line 157
     .local v0, "r":Ljava/lang/Runnable;
@@ -201,11 +201,11 @@
     return-void
 .end method
 
-.method public utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+.method public utConfigurationQueryFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "error"    # Lcom/android/ims/ImsReasonInfo;
+    .param p3, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 83
@@ -216,7 +216,7 @@
     .line 84
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$4;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$4;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 94
     .local v0, "r":Ljava/lang/Runnable;
@@ -228,11 +228,11 @@
     return-void
 .end method
 
-.method public utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+.method public utConfigurationUpdateFailed(Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
     .locals 2
     .param p1, "ut"    # Lcom/android/ims/internal/IImsUt;
     .param p2, "id"    # I
-    .param p3, "error"    # Lcom/android/ims/ImsReasonInfo;
+    .param p3, "error"    # Landroid/telephony/ims/ImsReasonInfo;
 
     .prologue
     .line 44
@@ -243,7 +243,7 @@
     .line 45
     new-instance v0, Lorg/codeaurora/ims/ImsUtListenerProxy$2;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILcom/android/ims/ImsReasonInfo;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsUtListenerProxy$2;-><init>(Lorg/codeaurora/ims/ImsUtListenerProxy;Lcom/android/ims/internal/IImsUt;ILandroid/telephony/ims/ImsReasonInfo;)V
 
     .line 55
     .local v0, "r":Ljava/lang/Runnable;

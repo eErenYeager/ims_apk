@@ -112,13 +112,13 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap0(Lorg/codeaurora/ims/ImsUtImpl;Landroid/os/AsyncResult;)Lcom/android/ims/ImsReasonInfo;
+.method static synthetic -wrap0(Lorg/codeaurora/ims/ImsUtImpl;Landroid/os/AsyncResult;)Landroid/telephony/ims/ImsReasonInfo;
     .locals 1
     .param p0, "-this"    # Lorg/codeaurora/ims/ImsUtImpl;
     .param p1, "ar"    # Landroid/os/AsyncResult;
 
     .prologue
-    invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsUtImpl;->getImsReasonInfoFromResponseError(Landroid/os/AsyncResult;)Lcom/android/ims/ImsReasonInfo;
+    invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsUtImpl;->getImsReasonInfoFromResponseError(Landroid/os/AsyncResult;)Landroid/telephony/ims/ImsReasonInfo;
 
     move-result-object v0
 
@@ -408,7 +408,7 @@
     return v0
 .end method
 
-.method private getImsReasonInfoFromResponseError(Landroid/os/AsyncResult;)Lcom/android/ims/ImsReasonInfo;
+.method private getImsReasonInfoFromResponseError(Landroid/os/AsyncResult;)Landroid/telephony/ims/ImsReasonInfo;
     .locals 8
     .param p1, "ar"    # Landroid/os/AsyncResult;
 
@@ -470,12 +470,12 @@
 
     .line 575
     .local v0, "code":I
-    new-instance v3, Lcom/android/ims/ImsReasonInfo;
+    new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
-    invoke-direct {v3, v0, v7}, Lcom/android/ims/ImsReasonInfo;-><init>(II)V
+    invoke-direct {v3, v0, v7}, Landroid/telephony/ims/ImsReasonInfo;-><init>(II)V
 
     .line 577
-    .local v3, "genericError":Lcom/android/ims/ImsReasonInfo;
+    .local v3, "genericError":Landroid/telephony/ims/ImsReasonInfo;
     iget-object v2, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     check-cast v2, Ljava/lang/RuntimeException;
@@ -550,9 +550,9 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 599
-    new-instance v4, Lcom/android/ims/ImsReasonInfo;
+    new-instance v4, Landroid/telephony/ims/ImsReasonInfo;
 
-    invoke-direct {v4, v0, v7}, Lcom/android/ims/ImsReasonInfo;-><init>(II)V
+    invoke-direct {v4, v0, v7}, Landroid/telephony/ims/ImsReasonInfo;-><init>(II)V
 
     return-object v4
 
