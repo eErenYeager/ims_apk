@@ -23,153 +23,131 @@
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
     .locals 1
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1811
+    .line 216
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 1812
+    .line 217
+    const/4 v0, 0x0
+
     invoke-direct {p0, p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 1813
+    .line 218
     iput v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
-    .line 1811
+    .line 219
     return-void
 .end method
 
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
-    .param p2, "size"    # I
 
-    .prologue
-    .line 1807
+    .line 212
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 1808
+    .line 213
     invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 1807
+    .line 214
     return-void
 .end method
 
 
 # virtual methods
-.method get(Ljava/nio/ByteBuffer;)V
+.method public get(Ljava/nio/ByteBuffer;)V
     .locals 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
-    .prologue
-    .line 1823
+    .line 231
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
-
-    move-result v1
-
-    iput v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
-
-    .line 1825
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
 
-    .line 1826
-    .local v0, "pos":I
-    iget v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->padSize:I
+    iput v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
-    add-int/2addr v1, v0
+    .line 232
+    iget v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->padSize:I
 
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
-    .line 1822
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 233
     return-void
 .end method
 
 .method public getValue()I
     .locals 1
 
-    .prologue
-    .line 1830
+    .line 236
     iget v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
     return v0
 .end method
 
-.method put(Ljava/nio/ByteBuffer;)V
-    .locals 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public put(Ljava/nio/ByteBuffer;)V
+    .locals 3
 
-    .prologue
-    .line 1816
-    iget v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
+    .line 223
+    iget v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 1817
+    .line 224
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    move v1, v0
+
     :goto_0
-    iget v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->padSize:I
+    iget v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->padSize:I
 
-    if-ge v0, v1, :cond_0
+    if-ge v1, v2, :cond_0
 
-    .line 1818
-    const/4 v1, 0x0
+    .line 225
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
-
-    .line 1817
-    add-int/lit8 v0, v0, 0x1
+    .line 224
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1815
+    .line 227
     :cond_0
     return-void
 .end method
 
 .method public setValue(I)V
     .locals 0
-    .param p1, "v"    # I
 
-    .prologue
-    .line 1834
+    .line 240
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
-    .line 1833
+    .line 241
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 1839
+    .line 244
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "IntValue [value="
+    const-string v1, "IntValue [value="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     iget v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->value:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    const-string/jumbo v1, "]"
+    const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

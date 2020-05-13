@@ -34,91 +34,89 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
-    .locals 3
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
+    .locals 2
 
-    .prologue
-    const/16 v2, 0x20
-
-    .line 2276
+    .line 988
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
+    .line 989
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$Config;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2277
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
+    .line 980
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    const/16 v1, 0x20
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 2279
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 981
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2280
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 982
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 2282
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 983
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2283
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 984
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2285
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 985
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2286
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_enable:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 986
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_enable:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2276
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+
+    .line 990
     return-void
 .end method
 
 
 # virtual methods
-.method getSize()I
+.method public getSize()I
     .locals 1
 
-    .prologue
-    .line 2289
+    .line 994
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
     invoke-virtual {v0}, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;->getSize()I
@@ -134,154 +132,139 @@
     return v0
 .end method
 
-.method populate(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public populate(Ljava/nio/ByteBuffer;)V
+    .locals 1
 
-    .prologue
-    .line 2305
+    .line 1011
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;->populate(Ljava/nio/ByteBuffer;)V
 
-    .line 2307
+    .line 1012
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2308
+    .line 1013
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2309
+    .line 1014
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2310
+    .line 1015
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2311
+    .line 1016
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2312
+    .line 1017
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_enable:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2314
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 1018
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "VoipConfigRawDataSet::populate: "
 
-    const-string/jumbo v2, "VoipConfigRawDataSet::populate: "
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    move-result-object v1
+    const-string v0, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2304
+    .line 1019
     return-void
 .end method
 
-.method put(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public put(Ljava/nio/ByteBuffer;)V
+    .locals 2
 
-    .prologue
-    .line 2293
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 999
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "VoipConfigRawDataSet::put: "
 
-    const-string/jumbo v2, "VoipConfigRawDataSet::put: "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2294
+    .line 1000
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2296
+    .line 1001
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2297
+    .line 1002
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2298
+    .line 1003
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2299
+    .line 1004
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2300
+    .line 1005
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2301
+    .line 1006
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_enable:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2292
+    .line 1007
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 2319
+    .line 1022
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "VoipConfigRawDataSet ["
+    const-string v1, "VoipConfigRawDataSet ["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->data:Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawData;
 
@@ -291,111 +274,57 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", amr_mode_str_valid="
 
-    .line 2320
-    const-string/jumbo v1, ", amr_mode_str_valid="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2320
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", amr_mode_str="
 
-    .line 2321
-    const-string/jumbo v1, ", amr_mode_str="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2321
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", amr_wb_mode_str_valid="
 
-    .line 2322
-    const-string/jumbo v1, ", amr_wb_mode_str_valid="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2322
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", amr_wb_mode_str="
 
-    .line 2323
-    const-string/jumbo v1, ", amr_wb_mode_str="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2323
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->amr_wb_mode_str:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", silent_redial_valid="
 
-    .line 2324
-    const-string/jumbo v1, ", silent_redial_valid="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2324
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", silent_redial_enable="
 
-    .line 2325
-    const-string/jumbo v1, ", silent_redial_enable="
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2325
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipConfigRawDataSet;->silent_redial_enable:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, "]"
 
-    .line 2325
-    const-string/jumbo v1, "]"
-
-    .line 2319
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

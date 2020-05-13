@@ -21,24 +21,23 @@
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .prologue
-    .line 1884
+    .line 157
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$Config;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 158
     return-void
 .end method
 
 
 # virtual methods
-.method abstract getSize()I
+.method public abstract getSize()I
 .end method
 
-.method abstract populate(Ljava/nio/ByteBuffer;)V
+.method public abstract populate(Ljava/nio/ByteBuffer;)V
 .end method
 
-.method abstract put(Ljava/nio/ByteBuffer;)V
+.method public abstract put(Ljava/nio/ByteBuffer;)V
 .end method

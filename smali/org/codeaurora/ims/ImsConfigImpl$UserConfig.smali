@@ -24,173 +24,148 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
-    .locals 3
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
+    .locals 2
 
-    .prologue
-    .line 1949
+    .line 699
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
+    .line 700
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$Config;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 1950
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    .line 696
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    const/16 v2, 0x100
+    const/16 v1, 0x100
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
-    .line 1951
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 697
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 1949
+    .line 701
     return-void
 .end method
 
 
 # virtual methods
-.method getSize()I
+.method public getSize()I
     .locals 1
 
-    .prologue
-    .line 1955
+    .line 705
     const/16 v0, 0x101
 
     return v0
 .end method
 
-.method populate(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public populate(Ljava/nio/ByteBuffer;)V
+    .locals 1
 
-    .prologue
-    .line 1965
+    .line 717
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 1966
+    .line 718
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 1967
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 719
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "UserConfig::populate: "
 
-    const-string/jumbo v2, "UserConfig::populate: "
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    move-result-object v1
+    const-string v0, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1964
+    .line 720
     return-void
 .end method
 
-.method put(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public put(Ljava/nio/ByteBuffer;)V
+    .locals 2
 
-    .prologue
-    .line 1959
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 710
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "UserConfig::put: "
 
-    const-string/jumbo v2, "UserConfig::put: "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1960
+    .line 711
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 1961
+    .line 712
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 1958
+    .line 713
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 1972
+    .line 723
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "UserConfig [domainValid="
+    const-string v1, "UserConfig [domainValid="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    const-string/jumbo v1, "domain="
+    const-string v1, "domain="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$UserConfig;->domain:Lorg/codeaurora/ims/ImsConfigImpl$StringValue;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    const-string/jumbo v1, "]"
+    const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

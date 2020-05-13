@@ -23,19 +23,16 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 0
-    .param p1, "item"    # I
-    .param p2, "value"    # Ljava/lang/String;
 
-    .prologue
-    .line 264
+    .line 646
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 265
+    .line 647
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->item:I
 
-    .line 266
+    .line 648
     iput-object p2, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->value:Ljava/lang/String;
 
-    .line 264
+    .line 649
     return-void
 .end method

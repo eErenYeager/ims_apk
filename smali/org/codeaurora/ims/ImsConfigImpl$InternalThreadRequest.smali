@@ -23,15 +23,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "argument"    # Ljava/lang/Object;
 
-    .prologue
-    .line 230
+    .line 333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
+    .line 334
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
 
-    .line 230
+    .line 335
     return-void
 .end method

@@ -21,514 +21,460 @@
 # direct methods
 .method public constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .prologue
-    .line 305
+    .line 249
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 306
+    .line 250
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 305
+    .line 251
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 10
-    .param p1, "msg"    # Landroid/os/Message;
+    .locals 3
 
-    .prologue
-    const/4 v9, 0x0
+    .line 254
+    nop
 
-    .line 315
-    const/4 v5, 0x1
+    .line 255
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 317
-    .local v5, "status":I
-    const-string/jumbo v6, "ImsConfigImpl"
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    const-string v1, "handleMessage, msg = "
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v8, "handleMessage, msg = "
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget v8, p1, Landroid/os/Message;->what:I
+    move-result-object v0
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, "ImsConfigImpl"
 
-    move-result-object v7
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 258
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    move-result-object v7
+    const/4 v1, 0x0
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    packed-switch v0, :pswitch_data_0
 
-    .line 318
-    iget v6, p1, Landroid/os/Message;->what:I
-
-    packed-switch v6, :pswitch_data_0
-
-    .line 405
+    .line 323
     :pswitch_0
-    const-string/jumbo v6, "ImsConfigImpl"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "InternalThreadHandler: unexpected message code: "
 
-    const-string/jumbo v8, "InternalThreadHandler: unexpected message code: "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget p1, p1, Landroid/os/Message;->what:I
 
-    move-result-object v7
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 406
-    iget v8, p1, Landroid/os/Message;->what:I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 405
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    move-result-object v7
+    const-string v0, "ImsConfigImpl"
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 309
-    :cond_0
-    :goto_0
+    .line 324
     return-void
 
-    .line 320
+    .line 319
     :pswitch_1
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    check-cast p1, Landroid/os/AsyncResult;
+
+    .line 320
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1200(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/os/AsyncResult;)Lcom/android/ims/ImsConfigListener;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1400(Lorg/codeaurora/ims/ImsConfigImpl;Lcom/android/ims/ImsConfigListener;Landroid/os/AsyncResult;)V
 
     .line 321
-    .local v4, "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v1, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+    return-void
 
-    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-
-    .line 322
-    .local v1, "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v6, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap7(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;)V
-
-    goto :goto_0
-
-    .line 326
-    .end local v1    # "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    .line 315
     :pswitch_2
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    check-cast p1, Landroid/os/AsyncResult;
 
-    .line 327
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v1, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+    .line 316
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
+    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1200(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/os/AsyncResult;)Lcom/android/ims/ImsConfigListener;
 
-    .line 328
-    .restart local v1    # "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    move-result-object v1
 
-    invoke-static {v6, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap8(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;)V
+    invoke-static {v0, v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1300(Lorg/codeaurora/ims/ImsConfigImpl;Lcom/android/ims/ImsConfigListener;Landroid/os/AsyncResult;)V
 
-    goto :goto_0
+    .line 317
+    return-void
 
-    .line 332
-    .end local v1    # "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    .line 308
     :pswitch_3
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v0, Landroid/os/AsyncResult;
+    invoke-static {p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
-    .line 333
-    .local v0, "ar":Landroid/os/AsyncResult;
-    iget-object v1, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
+    move-result p1
 
-    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
+    if-eqz p1, :cond_0
 
-    .line 334
-    .restart local v1    # "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    iget-object v6, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    if-nez v6, :cond_1
+    invoke-static {p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$100(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
-    .line 335
-    const/4 v5, 0x0
+    move-result p1
 
-    .line 337
-    :cond_1
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    if-eqz p1, :cond_0
 
-    invoke-static {v6, v1, v5}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap5(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;I)V
+    .line 309
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    invoke-static {p1, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1002(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
+
+    .line 310
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    const/16 v0, 0xa
+
+    invoke-static {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1100(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+
+    .line 311
+    return-void
+
+    .line 313
+    :cond_0
+    return-void
+
+    .line 304
+    :pswitch_4
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+
+    .line 305
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    iget-object v1, p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+
+    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
+
+    iget v1, v1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
+
+    invoke-static {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$600(Lorg/codeaurora/ims/ImsConfigImpl;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
+
+    .line 306
+    return-void
+
+    .line 296
+    :pswitch_5
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    move-object v0, p1
+
+    check-cast v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+
+    .line 297
+    iget-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
+
+    .line 298
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    iget v2, p1, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->item:I
+
+    iget-object p1, p1, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->value:Ljava/lang/String;
+
+    invoke-static {v1, v2, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$900(Lorg/codeaurora/ims/ImsConfigImpl;ILjava/lang/String;)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
+
+    .line 299
+    monitor-enter v0
+
+    .line 300
+    :try_start_0
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 301
+    monitor-exit v0
 
     goto :goto_0
 
-    .line 341
-    .end local v0    # "ar":Landroid/os/AsyncResult;
-    .end local v1    # "argf":Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
-    :pswitch_4
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .line 302
+    :catchall_0
+    move-exception p1
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-
-    .line 342
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v2, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
-
-    check-cast v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-
-    .line 343
-    .local v2, "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    iget v7, v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
-
-    invoke-static {v6, v7}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap1(Lorg/codeaurora/ims/ImsConfigImpl;I)I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    iput-object v6, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
-
-    .line 345
-    monitor-enter v4
-
-    .line 346
-    :try_start_0
-    invoke-virtual {v4}, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->notifyAll()V
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    :goto_1
-    monitor-exit v4
+    throw p1
+
+    .line 288
+    :pswitch_6
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    move-object v0, p1
+
+    check-cast v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+
+    .line 289
+    iget-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
+
+    .line 290
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    iget v2, p1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
+
+    iget p1, p1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->value:I
+
+    invoke-static {v1, v2, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$800(Lorg/codeaurora/ims/ImsConfigImpl;II)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
+
+    .line 291
+    monitor-enter v0
+
+    .line 292
+    :try_start_1
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 293
+    monitor-exit v0
 
     goto :goto_0
 
-    .line 345
-    .restart local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    :catchall_0
-    move-exception v6
+    .line 294
+    :catchall_1
+    move-exception p1
 
-    monitor-exit v4
-
-    throw v6
-
-    .line 351
-    .end local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    :pswitch_5
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-
-    .line 352
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v3, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
-
-    check-cast v3, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
-
-    .line 353
-    .local v3, "args":Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    iget v7, v3, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->item:I
-
-    invoke-static {v6, v7}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap4(Lorg/codeaurora/ims/ImsConfigImpl;I)Ljava/lang/String;
-
-    move-result-object v6
-
-    iput-object v6, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
-
-    .line 355
-    monitor-enter v4
-
-    .line 356
-    :try_start_1
-    invoke-virtual {v4}, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->notifyAll()V
+    monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    goto :goto_1
+    throw p1
 
-    .line 355
-    :catchall_1
-    move-exception v6
+    .line 281
+    :pswitch_7
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    monitor-exit v4
+    move-object v0, p1
 
-    throw v6
+    check-cast v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
 
-    .line 361
-    .end local v3    # "args":Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    :pswitch_6
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .line 282
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
 
-    .line 362
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v2, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
 
-    check-cast v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
+    iget v1, v1, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->item:I
 
-    .line 363
-    .restart local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    invoke-static {p1, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$700(Lorg/codeaurora/ims/ImsConfigImpl;I)Ljava/lang/String;
 
-    iget v7, v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
+    move-result-object p1
 
-    iget v8, v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->value:I
+    iput-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
 
-    invoke-static {v6, v7, v8}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap2(Lorg/codeaurora/ims/ImsConfigImpl;II)I
+    .line 283
+    monitor-enter v0
 
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    iput-object v6, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
-
-    .line 365
-    monitor-enter v4
-
-    .line 366
+    .line 284
     :try_start_2
-    invoke-virtual {v4}, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->notifyAll()V
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 285
+    monitor-exit v0
+
+    goto :goto_0
+
+    .line 286
+    :catchall_2
+    move-exception p1
+
+    monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    goto :goto_1
+    throw p1
 
-    .line 365
-    :catchall_2
-    move-exception v6
+    .line 274
+    :pswitch_8
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    monitor-exit v4
+    move-object v0, p1
 
-    throw v6
+    check-cast v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
 
-    .line 371
-    .end local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    :pswitch_7
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .line 275
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
+    iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
 
-    .line 372
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v3, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
+    check-cast v1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
 
-    check-cast v3, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
+    iget v1, v1, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
 
-    .line 373
-    .restart local v3    # "args":Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    invoke-static {p1, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$600(Lorg/codeaurora/ims/ImsConfigImpl;I)I
 
-    iget v7, v3, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->item:I
+    move-result p1
 
-    iget-object v8, v3, Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;->value:Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v6, v7, v8}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap3(Lorg/codeaurora/ims/ImsConfigImpl;ILjava/lang/String;)I
+    move-result-object p1
 
-    move-result v6
+    iput-object p1, v0, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 276
+    monitor-enter v0
 
-    move-result-object v6
-
-    iput-object v6, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
-
-    .line 375
-    monitor-enter v4
-
-    .line 376
+    .line 277
     :try_start_3
-    invoke-virtual {v4}, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->notifyAll()V
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 278
+    monitor-exit v0
+
+    .line 326
+    :goto_0
+    return-void
+
+    .line 279
+    :catchall_3
+    move-exception p1
+
+    monitor-exit v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
+    throw p1
+
+    .line 266
+    :pswitch_9
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Landroid/os/AsyncResult;
+
+    .line 267
+    iget-object v0, p1, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
+
+    check-cast v0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
+
+    .line 268
+    iget-object p1, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    if-nez p1, :cond_1
+
+    .line 269
     goto :goto_1
 
-    .line 375
-    :catchall_3
-    move-exception v6
+    .line 268
+    :cond_1
+    const/4 v1, 0x1
 
-    monitor-exit v4
+    .line 271
+    :goto_1
+    iget-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    throw v6
+    invoke-static {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$500(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;I)V
 
-    .line 381
-    .end local v3    # "args":Lorg/codeaurora/ims/ImsConfigImpl$StringConfigRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    :pswitch_8
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .line 272
+    return-void
 
-    check-cast v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-
-    .line 382
-    .restart local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    iget-object v2, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
-
-    check-cast v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-
-    .line 383
-    .restart local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    iget v7, v2, Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;->item:I
-
-    invoke-static {v6, v7}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap1(Lorg/codeaurora/ims/ImsConfigImpl;I)I
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    iput-object v6, v4, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->result:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 387
-    .end local v2    # "argi":Lorg/codeaurora/ims/ImsConfigImpl$IntConfigRequestArgument;
-    .end local v4    # "request":Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
-    :pswitch_9
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->-get1(Lorg/codeaurora/ims/ImsConfigImpl;)I
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->-get2(Lorg/codeaurora/ims/ImsConfigImpl;)I
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 388
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->-get0(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    .line 389
-    const v7, 0x111003e
-
-    .line 388
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 390
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v6, v9}, Lorg/codeaurora/ims/ImsConfigImpl;->-set0(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
-
-    .line 391
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    const/16 v7, 0xa
-
-    invoke-static {v6, v7}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap6(Lorg/codeaurora/ims/ImsConfigImpl;I)V
-
-    goto/16 :goto_0
-
-    .line 396
+    .line 263
     :pswitch_a
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v0, Landroid/os/AsyncResult;
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 397
-    .restart local v0    # "ar":Landroid/os/AsyncResult;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
 
-    iget-object v7, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object p1, p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
 
-    invoke-static {v7, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap0(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/os/AsyncResult;)Lcom/android/ims/ImsConfigListener;
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
 
-    move-result-object v7
+    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$400(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;)V
 
-    invoke-static {v6, v7, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap9(Lorg/codeaurora/ims/ImsConfigImpl;Lcom/android/ims/ImsConfigListener;Landroid/os/AsyncResult;)V
+    .line 264
+    return-void
 
-    goto/16 :goto_0
-
-    .line 401
-    .end local v0    # "ar":Landroid/os/AsyncResult;
+    .line 260
     :pswitch_b
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    check-cast v0, Landroid/os/AsyncResult;
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 402
-    .restart local v0    # "ar":Landroid/os/AsyncResult;
-    iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;
 
-    iget-object v7, p0, Lorg/codeaurora/ims/ImsConfigImpl$InternalHandler;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object p1, p1, Lorg/codeaurora/ims/ImsConfigImpl$InternalThreadRequest;->argument:Ljava/lang/Object;
 
-    invoke-static {v7, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap0(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/os/AsyncResult;)Lcom/android/ims/ImsConfigListener;
+    check-cast p1, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;
 
-    move-result-object v7
+    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$300(Lorg/codeaurora/ims/ImsConfigImpl;Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;)V
 
-    invoke-static {v6, v7, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->-wrap10(Lorg/codeaurora/ims/ImsConfigImpl;Lcom/android/ims/ImsConfigListener;Landroid/os/AsyncResult;)V
+    .line 261
+    return-void
 
-    goto/16 :goto_0
-
-    .line 318
     nop
 
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_0
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_9
         :pswitch_b
         :pswitch_a
+        :pswitch_9
+        :pswitch_0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method

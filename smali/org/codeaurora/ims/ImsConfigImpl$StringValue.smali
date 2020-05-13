@@ -27,138 +27,127 @@
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
     .locals 1
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
-    .param p2, "s"    # I
 
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1848
+    .line 657
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 1849
+    .line 658
+    const/4 v0, 0x0
+
     invoke-direct {p0, p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$PadingValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 1851
+    .line 659
     if-gtz p2, :cond_0
 
+    .line 660
     const/4 p2, 0x1
 
-    .line 1852
+    .line 662
     :cond_0
     iput p2, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mSize:I
 
-    .line 1853
-    iget v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mSize:I
+    .line 663
+    iget p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mSize:I
 
-    new-array v0, v0, [B
+    new-array p1, p1, [B
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
-    .line 1848
+    .line 664
     return-void
 .end method
 
 
 # virtual methods
-.method get(Ljava/nio/ByteBuffer;)V
+.method public get(Ljava/nio/ByteBuffer;)V
     .locals 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
-    .prologue
-    .line 1861
+    .line 673
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([BB)V
 
-    .line 1862
+    .line 674
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 1863
-    new-instance v0, Ljava/lang/String;
+    .line 675
+    new-instance p1, Ljava/lang/String;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {p1, v0}, Ljava/lang/String;-><init>([B)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
 
-    .line 1860
+    .line 676
     return-void
 .end method
 
 .method public getValue()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 1867
+    .line 679
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method put(Ljava/nio/ByteBuffer;)V
+.method public put(Ljava/nio/ByteBuffer;)V
     .locals 1
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
-    .prologue
-    .line 1857
+    .line 668
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 1856
+    .line 669
     return-void
 .end method
 
 .method public setValue(Ljava/lang/String;)V
-    .locals 5
-    .param p1, "v"    # Ljava/lang/String;
+    .locals 4
 
-    .prologue
-    const/4 v4, 0x0
-
-    .line 1871
+    .line 683
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
 
-    .line 1872
+    .line 684
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
-    invoke-static {v0, v4}, Ljava/util/Arrays;->fill([BB)V
+    const/4 v1, 0x0
 
-    .line 1873
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([BB)V
+
+    .line 685
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 1874
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
-
+    .line 686
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result p1
 
     iget-object v3, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->mBuffer:[B
 
     array-length v3, v3
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+    invoke-static {p1, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v2
+    move-result p1
 
-    invoke-static {v0, v4, v1, v4, v2}, Ljava/lang/System;->arraycopy([BI[BII)V
+    invoke-static {v0, v1, v2, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1870
+    .line 688
     :cond_0
     return-void
 .end method
@@ -166,29 +155,22 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 1880
+    .line 691
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "StringValue [value="
+    const-string v1, "StringValue [value="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$StringValue;->value:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    const-string/jumbo v1, "]"
+    const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

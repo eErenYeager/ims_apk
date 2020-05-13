@@ -34,195 +34,157 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
-    .locals 3
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
+    .locals 2
 
-    .prologue
-    .line 2584
+    .line 468
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2588
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    .line 463
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mErrorType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2589
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    .line 464
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mErrorType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2590
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 465
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    const/4 v2, 0x3
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRsp:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRspValid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 466
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2591
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    const/4 v1, 0x3
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRsp:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRspValid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2584
+    .line 469
     return-void
 .end method
 
 
 # virtual methods
-.method get(Ljava/nio/ByteBuffer;)Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;
+.method public get(Ljava/nio/ByteBuffer;)Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;
     .locals 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
-    .prologue
-    .line 2594
+    .line 473
     new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2595
-    .local v0, "ret":Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;
+    .line 474
     iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2596
+    .line 475
     iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mErrorType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2597
+    .line 476
     iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRspValid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2598
+    .line 477
     iget-object v1, v0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRsp:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v1, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2599
+    .line 478
     return-object v0
 .end method
 
-.method isSuccess()Z
-    .locals 2
+.method public isSuccess()Z
+    .locals 1
 
-    .prologue
-    const/4 v0, 0x0
+    .line 483
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2603
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    invoke-virtual {v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->getValue()I
 
-    invoke-virtual {v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->getValue()I
+    move-result v0
 
-    move-result v1
-
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
+    goto :goto_0
+
     :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 2608
+    .line 487
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "ResponseHeader [mResultType="
+    const-string v1, "ResponseHeader [mResultType="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2609
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mResultType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", mErrorType="
 
-    .line 2610
-    const-string/jumbo v1, ", mErrorType="
-
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2610
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mErrorType:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", mSettingRspValid="
 
-    .line 2611
-    const-string/jumbo v1, ", mSettingRspValid="
-
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2611
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRspValid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", mSettingRsp="
 
-    .line 2612
-    const-string/jumbo v1, ", mSettingRsp="
-
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2612
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$ResponseHeader;->mSettingRsp:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, "]"
 
-    .line 2612
-    const-string/jumbo v1, "]"
-
-    .line 2608
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

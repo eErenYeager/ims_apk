@@ -27,28 +27,23 @@
 # direct methods
 .method public constructor <init>(IIILcom/android/ims/ImsConfigListener;)V
     .locals 0
-    .param p1, "feature"    # I
-    .param p2, "network"    # I
-    .param p3, "value"    # I
-    .param p4, "listener"    # Lcom/android/ims/ImsConfigListener;
 
-    .prologue
-    .line 240
+    .line 167
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 242
+    .line 168
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;->feature:I
 
-    .line 243
+    .line 169
     iput p2, p0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;->network:I
 
-    .line 244
+    .line 170
     iput-object p4, p0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;->listener:Lcom/android/ims/ImsConfigListener;
 
-    .line 245
+    .line 171
     iput p3, p0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;->value:I
 
-    .line 241
+    .line 172
     return-void
 .end method
 
@@ -57,8 +52,7 @@
 .method public getFeature()I
     .locals 1
 
-    .prologue
-    .line 248
+    .line 175
     iget v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$FeatureRequestArgument;->feature:I
 
     return v0

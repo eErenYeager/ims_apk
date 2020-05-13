@@ -48,601 +48,472 @@
 
 # direct methods
 .method constructor <init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
-    .locals 3
-    .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
+    .locals 2
 
-    .prologue
-    const/4 v2, 0x3
-
-    .line 2498
+    .line 794
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
+    .line 795
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$Config;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2499
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 779
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2500
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    .line 780
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2502
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 781
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2503
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    .line 782
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2505
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 783
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2506
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    .line 784
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2508
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 785
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2509
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    .line 786
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2511
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 787
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2512
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    .line 788
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2514
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    .line 789
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    const/4 v1, 0x3
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 2515
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 790
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    invoke-direct {p1, v0}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 2517
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 791
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 2518
-    new-instance v0, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+    .line 792
+    new-instance p1, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    invoke-direct {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;)V
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
+    invoke-direct {p1, v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;-><init>(Lorg/codeaurora/ims/ImsConfigImpl;I)V
 
-    .line 2498
+    iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
+
+    .line 796
     return-void
 .end method
 
 
 # virtual methods
-.method getSize()I
+.method public getSize()I
     .locals 1
 
-    .prologue
-    .line 2524
+    .line 800
     const/16 v0, 0x20
 
     return v0
 .end method
 
-.method populate(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public populate(Ljava/nio/ByteBuffer;)V
+    .locals 1
 
-    .prologue
-    .line 2547
+    .line 824
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2548
+    .line 825
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2549
+    .line 826
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2550
+    .line 827
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2551
+    .line 828
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2552
+    .line 829
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2553
+    .line 830
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2554
+    .line 831
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2555
+    .line 832
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2556
+    .line 833
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2557
+    .line 834
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2558
+    .line 835
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2559
+    .line 836
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2560
+    .line 837
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->get(Ljava/nio/ByteBuffer;)V
 
-    .line 2561
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 838
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "VoipClientProvConfigData::populate: "
 
-    const-string/jumbo v2, "VoipClientProvConfigData::populate: "
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    move-result-object v1
+    const-string v0, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2546
+    .line 839
     return-void
 .end method
 
-.method put(Ljava/nio/ByteBuffer;)V
-    .locals 3
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
+.method public put(Ljava/nio/ByteBuffer;)V
+    .locals 2
 
-    .prologue
-    .line 2528
-    const-string/jumbo v0, "ImsConfigImpl"
+    .line 805
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "VoipClientProvConfigData::put: "
 
-    const-string/jumbo v2, "VoipClientProvConfigData::put: "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "ImsConfigImpl"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2530
+    .line 806
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2531
+    .line 807
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2532
+    .line 808
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2533
+    .line 809
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2534
+    .line 810
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2535
+    .line 811
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2536
+    .line 812
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2537
+    .line 813
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2538
+    .line 814
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2539
+    .line 815
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2540
+    .line 816
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2541
+    .line 817
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2542
+    .line 818
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2543
+    .line 819
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsConfigImpl$IntValue;->put(Ljava/nio/ByteBuffer;)V
 
-    .line 2527
+    .line 820
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 2566
+    .line 842
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "VoipClientProvConfigData [enable_client_provisioning_valid="
+    const-string v1, "VoipClientProvConfigData [enable_client_provisioning_valid="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2567
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_client_provisioning="
 
-    .line 2568
-    const-string/jumbo v1, ", enable_client_provisioning="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2568
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_client_provisioning:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_volte_valid.="
 
-    .line 2569
-    const-string/jumbo v1, ", enable_volte_valid.="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2569
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_volte="
 
-    .line 2570
-    const-string/jumbo v1, ", enable_volte="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2570
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_volte:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_vt_valid="
 
-    .line 2571
-    const-string/jumbo v1, ", enable_vt_valid="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2571
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_vt="
 
-    .line 2572
-    const-string/jumbo v1, ", enable_vt="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2572
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_vt:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_presence_valid="
 
-    .line 2573
-    const-string/jumbo v1, ", enable_presence_valid="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2573
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", enable_presence="
 
-    .line 2574
-    const-string/jumbo v1, ", enable_presence="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2574
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->enable_presence:Lorg/codeaurora/ims/ImsConfigImpl$ByteValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call_valid="
 
-    .line 2575
-    const-string/jumbo v1, ", wifi_call_valid="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2575
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call="
 
-    .line 2576
-    const-string/jumbo v1, ", wifi_call="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2576
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call_preference_valid="
 
-    .line 2577
-    const-string/jumbo v1, ", wifi_call_preference_valid="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2577
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call_preference="
 
-    .line 2578
-    const-string/jumbo v1, ", wifi_call_preference="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2578
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_preference:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call_roaming_valid="
 
-    .line 2579
-    const-string/jumbo v1, ", wifi_call_roaming_valid="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2579
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming_valid:Lorg/codeaurora/ims/ImsConfigImpl$ValidValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, ", wifi_call_roaming="
 
-    .line 2580
-    const-string/jumbo v1, ", wifi_call_roaming="
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    .line 2580
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$VoipClientProvConfigData;->wifi_call_roaming:Lorg/codeaurora/ims/ImsConfigImpl$IntValue;
 
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, "]"
 
-    .line 2580
-    const-string/jumbo v1, "]"
-
-    .line 2566
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
