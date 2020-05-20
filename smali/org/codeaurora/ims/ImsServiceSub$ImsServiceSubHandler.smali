@@ -70,17 +70,28 @@
     return-void
 .end method
 
-.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
-    .locals 3
+.method private createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;I)V
+    .locals 6
     .param p1, "listener"    # Lcom/android/ims/internal/IImsRegistrationListener;
     .param p2, "registrationState"    # I
     .param p3, "imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
-
+    .param p4, "imsRadioTech"    # I
+    
     .prologue
     .line 605
     new-instance v0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;
+    
+    move-object v1, p0
+    
+    move v2, p2
+    
+    move-object v3, p1
+    
+    move-object v4, p3
+    
+    move v5, p4
 
-    invoke-direct {v0, p0, p2, p1, p3}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;)V
+    invoke-direct/range {v0 .. v5}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;-><init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;I)V
 
     .line 625
     .local v0, "r":Ljava/lang/Runnable;
@@ -99,7 +110,7 @@
 .end method
 
 .method private handleImsStateChanged(Landroid/os/AsyncResult;)V
-    .locals 9
+    .locals 10
     .param p1, "ar"    # Landroid/os/AsyncResult;
 
     .prologue
@@ -168,6 +179,32 @@
     .line 848
     .local v5, "regState":I
     :goto_2
+    invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->getRilRadioTech(Lorg/codeaurora/ims/ImsQmiIF$Registration;)I
+    
+    move-result v9
+    
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "getRilRadioTech= "
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+    
+    const-string/jumbo v7, "ImsServiceSub"
+
+    invoke-static {v7, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    
     new-instance v2, Landroid/telephony/ims/ImsReasonInfo;
 
     .line 849
@@ -204,7 +241,7 @@
 
     .line 852
     .local v3, "regListener":Lcom/android/ims/internal/IImsRegistrationListener;
-    invoke-direct {p0, v3, v5, v2}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
+    invoke-direct {p0, v3, v5, v2, v9}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;I)V
 
     goto :goto_3
 
@@ -249,6 +286,61 @@
     .line 837
     :cond_4
     return-void
+.end method
+
+.method private getRilRadioTech(Lorg/codeaurora/ims/ImsQmiIF$Registration;)I
+    .locals 3
+
+    .line 1282
+    invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech()Z
+
+    move-result v0
+
+    const/16 v1, 0xe
+
+    if-nez v0, :cond_0
+
+    .line 1283
+    return v1
+
+    .line 1287
+    :cond_0
+    invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getRadioTech()I
+
+    move-result p1
+
+    const/16 v0, 0x12
+
+    if-eq p1, v1, :cond_2
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v2, 0x13
+
+    if-eq p1, v2, :cond_1
+
+    .line 1296
+    goto :goto_0
+
+    .line 1293
+    :cond_1
+    nop
+
+    .line 1294
+    move v1, v0
+
+    goto :goto_0
+
+    .line 1289
+    :cond_2
+    nop
+
+    .line 1290
+    nop
+
+    .line 1299
+    :goto_0
+    return v1
 .end method
 
 .method private handleSrvStatusUpdate(Ljava/util/ArrayList;)V

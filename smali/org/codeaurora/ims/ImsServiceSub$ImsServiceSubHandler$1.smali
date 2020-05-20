@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;)V
+    value = Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->createRegCallBackThread(Lcom/android/ims/internal/IImsRegistrationListener;ILandroid/telephony/ims/ImsReasonInfo;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,14 +26,17 @@
 
 .field final synthetic val$registrationState:I
 
+.field final synthetic val$imsRadioTech:I
+
 
 # direct methods
-.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;)V
+.method constructor <init>(Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;ILcom/android/ims/internal/IImsRegistrationListener;Landroid/telephony/ims/ImsReasonInfo;I)V
     .locals 0
     .param p1, "this$1"    # Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;
     .param p2, "val$registrationState"    # I
     .param p3, "val$listener"    # Lcom/android/ims/internal/IImsRegistrationListener;
     .param p4, "val$imsReasonInfo"    # Landroid/telephony/ims/ImsReasonInfo;
+    .param p5, "val$imsRadioTech"    # I
 
     .prologue
     .line 605
@@ -44,6 +47,8 @@
     iput-object p3, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
 
     iput-object p4, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsReasonInfo:Landroid/telephony/ims/ImsReasonInfo;
+    
+    iput p5, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsRadioTech:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,8 +74,10 @@
     .line 611
     :pswitch_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
+    
+    iget v2, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsRadioTech:I
 
-    invoke-interface {v1}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationConnected()V
+    invoke-interface {v1, v2}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationConnectedWithRadioTech(I)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -127,8 +134,10 @@
     .line 617
     :pswitch_2
     iget-object v1, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$listener:Lcom/android/ims/internal/IImsRegistrationListener;
+    
+    iget v2, p0, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler$1;->val$imsRadioTech:I
 
-    invoke-interface {v1}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationProgressing()V
+    invoke-interface {v1, v2}, Lcom/android/ims/internal/IImsRegistrationListener;->registrationProgressingWithRadioTech(I)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
