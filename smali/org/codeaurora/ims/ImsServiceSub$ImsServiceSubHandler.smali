@@ -74,69 +74,58 @@
 .end method
 
 .method private getRilRadioTech(Lorg/codeaurora/ims/ImsQmiIF$Registration;)I
-    .locals 2
-    .param p1, "registration"    # Lorg/codeaurora/ims/ImsQmiIF$Registration;
+    .locals 3
 
-    .prologue
-    .line 845
+    .line 1282
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->hasRadioTech()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    const/16 v1, 0xe
 
-    .line 846
-    const/4 v1, 0x0
+    if-nez v0, :cond_0
 
+    .line 1283
     return v1
 
-    .line 850
+    .line 1287
     :cond_0
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsQmiIF$Registration;->getRadioTech()I
 
-    move-result v1
+    move-result p1
 
-    packed-switch v1, :pswitch_data_0
-
-    .line 859
-    :pswitch_0
-    const/4 v0, 0x0
-
-    .line 862
-    .local v0, "imsRat":I
-    :goto_0
-    return v0
-
-    .line 852
-    .end local v0    # "imsRat":I
-    :pswitch_1
-    const/16 v0, 0xe
-
-    .line 853
-    .restart local v0    # "imsRat":I
-    goto :goto_0
-
-    .line 856
-    .end local v0    # "imsRat":I
-    :pswitch_2
     const/16 v0, 0x12
 
-    .line 857
-    .restart local v0    # "imsRat":I
+    if-eq p1, v1, :cond_2
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v2, 0x13
+
+    if-eq p1, v2, :cond_1
+
+    .line 1296
     goto :goto_0
 
-    .line 850
+    .line 1293
+    :cond_1
     nop
 
-    :pswitch_data_0
-    .packed-switch 0xe
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_2
-        :pswitch_2
-    .end packed-switch
+    .line 1294
+    move v1, v0
+
+    goto :goto_0
+
+    .line 1289
+    :cond_2
+    nop
+
+    .line 1290
+    nop
+
+    .line 1299
+    :goto_0
+    return v1
 .end method
 
 .method private handleImsStateChanged(Landroid/os/AsyncResult;)V
@@ -225,6 +214,28 @@
     invoke-direct {p0, v7}, Lorg/codeaurora/ims/ImsServiceSub$ImsServiceSubHandler;->getRilRadioTech(Lorg/codeaurora/ims/ImsQmiIF$Registration;)I
 
     move-result v2
+    
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "getRilRadioTech= "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+    
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+    
+    const-string/jumbo v9, "ImsServiceSub"
+
+    invoke-static {v9, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 828
     const/4 v8, 0x2
