@@ -34,7 +34,7 @@
     iput-object p1, p0, Lcom/qualcomm/ims/vt/CameraManager;->mContext:Landroid/content/Context;
 
     .line 27
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput v0, p0, Lcom/qualcomm/ims/vt/CameraManager;->sCameraType:I
 
