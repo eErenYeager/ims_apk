@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" android:sharedUserId="android.uid.phone" coreApp="true" package="org.codeaurora.ims" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <protected-broadcast android:name="org.codeaurora.qs.tiles.wificallingtile"/>
+    <protected-broadcast android:name="org.codeaurora.wifibearer.WIFI_CONNECTION_STATE"/>
+    <uses-permission android:name="android.permission.BIND_IMS_SERVICE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="com.qti.permission.DIAG"/>
+    <uses-permission android:name="com.qti.permission.AUDIO"/>
+    <permission android:name="com.qti.permission.DIAG" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.qti.permission.AUDIO" android:protectionLevel="signatureOrSystem"/>
+    <application android:directBootAware="true" android:extractNativeLibs="false" android:usesNonSdkApi="true">
+        <uses-library android:name="com.qti.vzw.ims.internal"/>
+        <service android:enabled="true" android:exported="true" android:name=".ImsService" android:permission="android.permission.BIND_IMS_SERVICE" android:persistent="true" android:process="com.android.phone">
+            <meta-data android:name="android.telephony.ims.MMTEL_FEATURE" android:value="true"/>
+            <meta-data android:name="android.telephony.ims.EMERGENCY_MMTEL_FEATURE" android:value="true"/>
+            <intent-filter>
+                <action android:name="android.telephony.ims.compat.ImsService"/>
+                <action android:name="org.codeaurora.ims.internal.IQtiImsExt"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

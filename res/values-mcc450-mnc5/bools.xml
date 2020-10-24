@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_carrier_display_csretry_toast">true</bool>
+    <bool name="config_low_battery_video_calling_supported">true</bool>
+    <bool name="config_ovr_create_video_call_provider">true</bool>
+</resources>

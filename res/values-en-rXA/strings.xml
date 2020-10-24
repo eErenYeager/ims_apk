@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="call_hold_label">[Çåļļ ĥöļð : one two]</string>
+    <string name="call_resume_label">[Çåļļ Ŕéšûḿé : one two]</string>
+    <string name="device_is_hd_capable">[ÐéVîçé îš ĤÐ çåþåɓļé one two three]</string>
+    <string name="error_msg_cancelled">[Çåñçéļļéð one two]</string>
+    <string name="error_msg_failed">[Fåîļéð one two]</string>
+    <string name="error_msg_reinvite_collision">[ŔéîñVîţé Çöļļîšîöñ one two three]</string>
+    <string name="handover_from_wifi_to_lte">[Šŵîţçĥîñĝ ţö ĻŢÉ ñéţŵöŕķ ƒöŕ ɓéţţéŕ Qûåļîţý one two three four five]</string>
+    <string name="incoming_call_failed_low_battery">[Îñçöḿîñĝ Çåļļ îš ƒåîļéð ðûé ţö ļöŵ ɓåţţéŕý. one two three four five]</string>
+</resources>

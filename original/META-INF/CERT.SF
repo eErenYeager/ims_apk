@@ -1,0 +1,26 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: paPebaj3/cPs48IbCX4NtuH+gVbjPrK0UYm83vlqeqI=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: p7NZEtVxK3HY7aRFEp1DbWVYuCtBBmA30ltbE4TxzCc=
+
+Name: classes.dex
+SHA-256-Digest: 5TahLNLd9YCEThhmiI5SDMEyAHGp5UPGgy4aCLClw4o=
+
+Name: res/drawable-xhdpi-v4/ims_state.png
+SHA-256-Digest: PDtD0yeV5Ivq6BqTzWLSfiihU7E4gjMoPDQsea5DxFc=
+
+Name: res/drawable/vowifi_services_wifi_calling_fair.xml
+SHA-256-Digest: FG8RtrcXSpmfRpcaeeWlOVldHWaf6EnsXDkpxwW933g=
+
+Name: res/drawable/vowifi_services_wifi_calling_good.xml
+SHA-256-Digest: XXZpfnfSy2XAzKaYo+rqYADN/aA/mYmebuTZBj7R6d4=
+
+Name: res/drawable/vowifi_services_wifi_calling_poor.xml
+SHA-256-Digest: 1HIZ3Z10HQo/WSe1te6SvafyLjJ/CN7I+Vz+cwKTzNY=
+
+Name: resources.arsc
+SHA-256-Digest: HE5ykbLIkdnPgbJtWbBPGJLPszo4yX/JhMXXgqws0Wg=
+

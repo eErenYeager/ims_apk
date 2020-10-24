@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Created-By: 9 (Oracle Corporation)
+
+Name: AndroidManifest.xml
+SHA-256-Digest: gsRZUZbiNpQ/pCinPlibdxcW7VxUO0mHw5s9P6dBNPs=
+
+Name: classes.dex
+SHA-256-Digest: GmGb3LxggQ/FIQmU9ctIYarjtaPdZIUpTgT1pD/1dg0=
+
+Name: res/drawable-xhdpi-v4/ims_state.png
+SHA-256-Digest: I662mqeagdu3RhBbpf7bHx/Ud1k0QycmaSn9TG71t64=
+
+Name: res/drawable/vowifi_services_wifi_calling_fair.xml
+SHA-256-Digest: q45vQ0kG9YCdpWzhl3IzRzufoZPaOv5fBC/nFyo6F1I=
+
+Name: res/drawable/vowifi_services_wifi_calling_good.xml
+SHA-256-Digest: w+ErDq1Inla/yTb0hB7edMr2SgQoYgTxf+7Mm6zZboA=
+
+Name: res/drawable/vowifi_services_wifi_calling_poor.xml
+SHA-256-Digest: 6mPYZZTo34o1xIy05sgIS9b/su/E1mLFiZqW5R0abt0=
+
+Name: resources.arsc
+SHA-256-Digest: ExJVPkygZGwv5NQ6nCOnl9TnRT5uhgToc9VoysSs8OM=
+
