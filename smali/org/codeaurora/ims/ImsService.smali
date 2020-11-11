@@ -524,7 +524,7 @@
     .param p1, "nRatMask"    # I
 
     .line 282
-    const/16 v0, 0x4000
+    const/16 v0, 0x1000
 
     .line 283
     .local v0, "nMmMask":I
@@ -591,7 +591,7 @@
 
     const/4 v4, 0x0
 
-    aget-object v3, v3, v4
+    aget-object v3, v3, v1
 
     invoke-interface {v2, v1, v3}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
@@ -680,15 +680,13 @@
     .local v0, "defaultSub":I
     iget-object v1, p0, Lorg/codeaurora/ims/ImsService;->mServiceSubSlotMap:Ljava/util/List;
 
-    const/4 v2, 0x0
+    iget v2, p0, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
 
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/codeaurora/ims/ImsServiceSub;
-
-    iget v2, p0, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
 
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/ImsServiceSub;->registerForPhoneId(I)V
 
@@ -737,6 +735,19 @@
 
     .line 236
     .end local v5    # "intent":Landroid/content/Intent;
+
+    iget-object v3, p0, Lorg/codeaurora/ims/ImsService;->mServiceSubSlotMap:Ljava/util/List;
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/codeaurora/ims/ImsServiceSub;
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v3, v5}, Lorg/codeaurora/ims/ImsServiceSub;->setFeatureValue(I)V
+    
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
@@ -766,6 +777,18 @@
     invoke-direct {v3, v2}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsService;->sendStickyBroadcast(Landroid/content/Intent;)V
+
+    iget-object v3, p0, Lorg/codeaurora/ims/ImsService;->mServiceSubSlotMap:Ljava/util/List;
+
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/codeaurora/ims/ImsServiceSub;
+
+    const/4 v5, 0x2
+
+    invoke-virtual {v3, v5}, Lorg/codeaurora/ims/ImsServiceSub;->setFeatureValue(I)V
 
     .line 250
     return-void
@@ -930,7 +953,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 105
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSubscriptions()I
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSlots()I
 
     move-result v0
 
@@ -943,7 +966,7 @@
 
     .local v0, "i":I
     :goto_0
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSubscriptions()I
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSlots()I
 
     move-result v1
 
@@ -1043,20 +1066,6 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 147
-    if-nez p1, :cond_0
-
-    .line 151
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsService;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Lorg/codeaurora/ims/-$$Lambda$ImsService$lXe9ZbyWqZ709gWV8ntA6y-ajLw;
-
-    invoke-direct {v1, p0}, Lorg/codeaurora/ims/-$$Lambda$ImsService$lXe9ZbyWqZ709gWV8ntA6y-ajLw;-><init>(Lorg/codeaurora/ims/ImsService;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 153
-    :cond_0
     iget-object v0, p0, Lorg/codeaurora/ims/ImsService;->mServiceSubSlotMap:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1099,7 +1108,7 @@
 
     .local v0, "i":I
     :goto_0
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSubscriptions()I
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsService;->getNumSlots()I
 
     move-result v1
 

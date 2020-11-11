@@ -60,9 +60,11 @@
 
     move-result-object v0
 
-    iget v1, p0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v1, v1, -0x1
+    iget v1, v1, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -94,9 +96,11 @@
 
     move-result-object v0
 
-    iget v1, p0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v1, v1, -0x1
+    iget v1, v1, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -128,9 +132,11 @@
 
     move-result-object v0
 
-    iget v1, p0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v1, v1, -0x1
+    iget v1, v1, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -166,9 +172,11 @@
 
     move-result-object v0
 
-    iget v1, p0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v1, v1, -0x1
+    iget v1, v1, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -205,9 +213,11 @@
 
     move-result-object v0
 
-    iget v1, p0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v1, v1, -0x1
+    iget v1, v1, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -251,9 +261,11 @@
 
     move-result-object v1
 
-    iget v2, v0, Lorg/codeaurora/ims/ImsService$2;->default_subscription:I
+    iget-object v2, p0, Lorg/codeaurora/ims/ImsService$2;->this$0:Lorg/codeaurora/ims/ImsService;
 
-    add-int/lit8 v2, v2, -0x1
+    iget v2, v2, Lorg/codeaurora/ims/ImsService;->mImsPhoneId:I
+
+    
 
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

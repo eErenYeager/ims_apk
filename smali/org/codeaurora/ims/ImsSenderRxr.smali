@@ -130,9 +130,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;I)V
     .locals 5
     .param p1, "context"    # Landroid/content/Context;
+    .param p2, "phoneId"    # I
 
     .line 690
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsPhoneBaseCommands;-><init>(Landroid/content/Context;)V
@@ -223,7 +224,7 @@
     iput v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneType:I
 
     .line 693
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 

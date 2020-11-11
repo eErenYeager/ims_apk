@@ -417,7 +417,7 @@
 
     iget-object v6, v0, Lorg/codeaurora/ims/ImsServiceSub;->mContext:Landroid/content/Context;
 
-    invoke-direct {v15, v6}, Lorg/codeaurora/ims/ImsSenderRxr;-><init>(Landroid/content/Context;)V
+    invoke-direct {v15, v6, v2}, Lorg/codeaurora/ims/ImsSenderRxr;-><init>(Landroid/content/Context;I)V
 
     iput-object v15, v0, Lorg/codeaurora/ims/ImsServiceSub;->mCi:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -612,6 +612,9 @@
 
     .line 219
     .local v1, "smartCallForward":Lorg/codeaurora/ims/SmartCallForward;
+
+    const/4 v5, 0x1
+    
     invoke-virtual {v0, v5}, Lorg/codeaurora/ims/ImsServiceSub;->setFeatureState(I)V
 
     .line 220
@@ -5762,6 +5765,15 @@
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->registerForPhoneId(I)V
 
     .line 472
+    return-void
+.end method
+
+.method public setFeatureValue(I)V
+    .locals 1
+    .param p1, "State"    # I
+
+    invoke-virtual {p0, p1}, Lorg/codeaurora/ims/ImsServiceSub;->setFeatureState(I)V
+
     return-void
 .end method
 
