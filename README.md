@@ -1,6 +1,6 @@
 # Qualcomm IMS apk source for legacy devices
 
-This ims source is based on decompiled qcom ims.apk, modified by @eErenYeager (Abhishek) and @ghostrider-reborn (Adithya) for usage with Android 9 and 10. Since old SOCs such as msm8916 cannot run qcom's newer oreo/pie ims and radio stack, the ims apk has been modified to use compat MMTel apis added in Android Pie. Few more changes have been made to support Android 10 and volte on both slots as well.
+This ims source is based on decompiled qcom ims.apk, modified by @eErenYeager (Abhishek) and @ghostrider-reborn (Adithya) for usage with Android 9,10 and 11. Since old SOCs such as msm8916 cannot run qcom's newer oreo/pie ims and radio stack, the ims apk has been modified to use compat MMTel apis added in Android Pie. Few more changes have been made to support Android 11 and volte on both slots as well.
 
 **Tested and works in these devices:**
 - YU Yuphoria (lettuce)
@@ -8,6 +8,10 @@ This ims source is based on decompiled qcom ims.apk, modified by @eErenYeager (A
 - Redmi 2 (wt88047)
 - Lenovo Vibe K5 (A6020)
 - Oneplus 2
+- Oppo A37f
+- Bullhead
+- Shamu
+- Angler
 
 # Brief history
 - Android Pie is released - Google ditches the old ims apis and introduced new apis based on mmtel framework
